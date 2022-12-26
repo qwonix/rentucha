@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_about"
+        android:icon="@drawable/ic_baseline_explore_32"
+        android:title="Поиск" />
+
+    <item
+        android:id="@+id/menu_wishlists"
+        android:icon="@drawable/ic_baseline_favorite_border_32"
+        android:title="Вишлисты" />
+
+    <item
+        android:id="@+id/menu_trips"
+        android:icon="@drawable/file"
+        android:title="Поездки" />
+    <item
+        android:id="@+id/menu_inbox"
+        android:icon="@drawable/ic_baseline_inbox_32"
+        android:title="Входящие" />
+    <item
+        android:id="@+id/receive"
+        android:icon="@drawable/ic_outline_account_circle_32"
+        android:title="Log In" />
+
+</menu>
