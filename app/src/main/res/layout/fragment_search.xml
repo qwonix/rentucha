@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SearchFragment">
+    tools:context=".fragments.search.SearchFragment">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -14,12 +14,12 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/containerBottomSheet"
-        android:name="ru.qwonix.android.rentucha.BottomSheetFragment"
+        android:name="ru.qwonix.android.rentucha.fragments.search.BottomSheetFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:behavior_hideable="false"
         app:behavior_peekHeight="80dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        tools:layout="@layout/fragment_bottom_sheet" />
+        tools:layout="@layout/fragment_search_bottom_sheet" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
