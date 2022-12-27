@@ -26,17 +26,17 @@ class MainActivity : AppCompatActivity() {
 
         bottomSheetBehavior.addBottomSheetCallback(object : BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
-                if (BottomSheetBehavior.STATE_HALF_EXPANDED == newState || BottomSheetBehavior.STATE_EXPANDED == newState) {
-                    bottomNavigationView.animate().scaleX(1F).scaleY(1F).setDuration(300).start();
-                } else if (BottomSheetBehavior.STATE_COLLAPSED == newState) {
-                    bottomNavigationView.animate().scaleX(0F).scaleY(0F).setDuration(300).start();
-                }
-            }
+                           }
 
+            var bottomNavigationViewY: Float = -1F;
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
-//                println(slideOffset)
-//                bottomNavigationView.animate().scaleX(1 - slideOffset).scaleY(1 - slideOffset)
-//                    .setDuration(0).start()
+                // FIXME: get global y location
+                if (bottomNavigationViewY == -1F) {
+                    bottomNavigationViewY = bottomNavigationView.y;
+                }
+                bottomNavigationView.animate()
+                    .y(bottomNavigationViewY + bottomNavigationView.height * (1 - slideOffset))
+                    .setDuration(0).start()
             }
         })
 
