@@ -5,16 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.card.MaterialCardView
 import ru.qwonix.android.rentucha.R
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val bottomNavigationView = view.rootView.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        val bottomNavigationView =
+            view.rootView.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val containerBottomSheet = view.findViewById<FrameLayout>(R.id.containerBottomSheet)
         val bottomSheetBehavior = BottomSheetBehavior.from(containerBottomSheet)
 
@@ -23,7 +26,8 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 //        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN;
 //        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED;
 
-        bottomSheetBehavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+        bottomSheetBehavior.addBottomSheetCallback(object :
+            BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
             }
 
@@ -38,6 +42,17 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                     .setDuration(0).start()
             }
         })
+
+        val searchBarCardView = view.findViewById<MaterialCardView>(R.id.search_bar)
+        searchBarCardView.setOnClickListener { println("on searchBarCardView click") }
+
+        val searchBarFilters = view.findViewById<ImageView>(R.id.search_bar_filters)
+        searchBarFilters.setOnClickListener { println("on searchBarFilters click") }
+
+        val fragmentContainerView =
+            view.rootView.findViewById<FragmentContainerView>(R.id.mainFragmentContainer)
+
+        imageOnBar.setOnClickListener { println("on searchBarCardView click") }
     }
 
     override fun onCreateView(
