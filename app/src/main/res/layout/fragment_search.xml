@@ -26,8 +26,7 @@
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="8dp"
-                app:contentPadding="5dp"
-                tools:context="ru.qwonix.android.rentucha.MainSearchBarFragment">
+                app:contentPadding="5dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -54,10 +53,9 @@
                     android:layout_height="30dp"
                     android:layout_gravity="end|center_vertical"
                     android:layout_marginEnd="20dp"
-                    android:elevation="8dp"
                     app:cardCornerRadius="360dp"
-                    app:strokeColor="@color/gray_300"
-                    app:strokeWidth="1dp">
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/gray_300">
 
                     <ImageView
                         android:layout_width="match_parent"

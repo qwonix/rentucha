@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.card.MaterialCardView
 import ru.qwonix.android.rentucha.R
+import ru.qwonix.android.rentucha.fragments.search.settings.SearchSettingsFragment
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,15 +44,20 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         })
 
         val searchBarCardView = view.findViewById<MaterialCardView>(R.id.search_bar)
-        searchBarCardView.setOnClickListener { println("on searchBarCardView click") }
+        searchBarCardView.setOnClickListener {
+            println("on searchBarCardView click")
 
-        val searchBarFilters = view.findViewById<ImageView>(R.id.search_bar_filters)
-        searchBarFilters.setOnClickListener { println("on searchBarFilters click") }
+            val newInstance = SearchSettingsFragment()
+            parentFragmentManager.beginTransaction()
+                .add(R.id.mainFragmentContainer, newInstance)
+                .show(newInstance)
+                .commit()
+        }
 
-        val fragmentContainerView =
-            view.rootView.findViewById<FragmentContainerView>(R.id.mainFragmentContainer)
+        val searchBarFiltersCardView = view.findViewById<MaterialCardView>(R.id.search_bar_filters)
+        searchBarFiltersCardView.setOnClickListener { println("on searchBarFilters click") }
 
-        imageOnBar.setOnClickListener { println("on searchBarCardView click") }
+
     }
 
     override fun onCreateView(
