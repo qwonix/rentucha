@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.card.MaterialCardView
 import ru.qwonix.android.rentucha.R
-import ru.qwonix.android.rentucha.fragments.search.settings.SearchSettingsFragment
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,13 +45,10 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
         val searchBarCardView = view.findViewById<MaterialCardView>(R.id.search_bar)
         searchBarCardView.setOnClickListener {
-            println("on searchBarCardView click")
-
-            val newInstance = SearchSettingsFragment()
-            parentFragmentManager.beginTransaction()
-                .add(R.id.mainFragmentContainer, newInstance)
-                .show(newInstance)
-                .commit()
+            findNavController().navigate(R.id.action_searchFragment_to_searchSettingsFragment)
+            bottomNavigationView.animate()
+                .yBy(bottomNavigationView.height.toFloat())
+                .setDuration(300).start()
         }
 
         val searchBarFiltersCardView = view.findViewById<MaterialCardView>(R.id.search_bar_filters)

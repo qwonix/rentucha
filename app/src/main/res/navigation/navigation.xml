@@ -9,7 +9,11 @@
         android:id="@+id/searchFragment"
         android:name="ru.qwonix.android.rentucha.fragments.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_searchSettingsFragment"
+            app:destination="@id/searchSettingsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/wishlistFragment"
         android:name="ru.qwonix.android.rentucha.fragments.WishlistFragment"
@@ -30,4 +34,13 @@
         android:name="ru.qwonix.android.rentucha.fragments.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" />
+    <fragment
+        android:id="@+id/searchSettingsFragment"
+        android:name="ru.qwonix.android.rentucha.fragments.search.settings.SearchSettingsFragment"
+        android:label="fragment_search_settings"
+        tools:layout="@layout/fragment_search_settings">
+        <action
+            android:id="@+id/action_searchSettingsFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
 </navigation>

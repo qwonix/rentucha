@@ -60,6 +60,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:src="@drawable/ic_baseline_tune_24" />
                 </com.google.android.material.card.MaterialCardView>
