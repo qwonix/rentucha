@@ -6,20 +6,20 @@
     style="@style/MaterialCardView.SearchSettings.Selected"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:contentPadding="20dp"
     tools:context=".fragments.search.settings.expanded.SearchSettingsWhoExpandedFragment">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Куда?"
+            android:text="Кто?"
             android:textColor="@color/gray_900"
             android:textSize="24sp" />
 

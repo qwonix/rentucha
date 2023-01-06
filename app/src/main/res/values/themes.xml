@@ -43,7 +43,6 @@
     <style name="MaterialCardView.SearchSettings.Selected">
         <item name="cardCornerRadius">30dp</item>
         <item name="cardElevation">8dp</item>
-        <item name="contentPadding">15dp</item>
     </style>
 
 </resources>
