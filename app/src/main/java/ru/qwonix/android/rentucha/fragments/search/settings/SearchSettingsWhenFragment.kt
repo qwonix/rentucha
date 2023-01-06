@@ -11,7 +11,7 @@ class SearchSettingsWhenFragment : Fragment(R.layout.fragment_search_settings_wh
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<MaterialCardView>(R.id.when_search_bar).setOnClickListener {
+        view.findViewById<MaterialCardView>(R.id.card_when_search_setting).setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_searchSettingsWhenFragment_to_searchSettingsWhenExpandedFragment)
         }

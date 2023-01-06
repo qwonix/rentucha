@@ -12,7 +12,7 @@ class SearchSettingsWhereFragment : Fragment(R.layout.fragment_search_settings_w
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<MaterialCardView>(R.id.where_search_bar).setOnClickListener {
+        view.findViewById<MaterialCardView>(R.id.card_where_search_setting).setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_searchSettingsWhereFragment_to_searchSettingsWhereExpandedFragment)
         }

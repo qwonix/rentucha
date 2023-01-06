@@ -11,7 +11,7 @@ class SearchSettingsWhoFragment : Fragment(R.layout.fragment_search_settings_who
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<MaterialCardView>(R.id.who_search_bar).setOnClickListener {
+        view.findViewById<MaterialCardView>(R.id.card_who_search_setting).setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_searchSettingsWhoFragment_to_searchSettingsWhoExpandedFragment)
         }
