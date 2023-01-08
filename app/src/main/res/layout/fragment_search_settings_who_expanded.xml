@@ -56,12 +56,20 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true">
 
-                    <ImageView
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_who_remove_adult"
+                        style="@style/MaterialCardView.Cleared"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                    </com.google.android.material.card.MaterialCardView>
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -71,13 +79,19 @@
                         android:text="0"
                         android:textColor="@color/gray_900" />
 
-                    <ImageView
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_who_add_adult"
+                        style="@style/MaterialCardView.Cleared"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                        android:layout_centerVertical="true">
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                    </com.google.android.material.card.MaterialCardView>
 
                 </RelativeLayout>
 
@@ -115,12 +129,20 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true">
 
-                    <ImageView
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_who_remove_child"
+                        style="@style/MaterialCardView.Cleared"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                    </com.google.android.material.card.MaterialCardView>
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -130,13 +152,19 @@
                         android:text="0"
                         android:textColor="@color/gray_900" />
 
-                    <ImageView
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_who_add_child"
+                        style="@style/MaterialCardView.Cleared"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                        android:layout_centerVertical="true">
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                    </com.google.android.material.card.MaterialCardView>
 
                 </RelativeLayout>
 
@@ -174,12 +202,20 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true">
 
-                    <ImageView
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_who_remove_infant"
+                        style="@style/MaterialCardView.Cleared"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                    </com.google.android.material.card.MaterialCardView>
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -189,13 +225,19 @@
                         android:text="0"
                         android:textColor="@color/gray_900" />
 
-                    <ImageView
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_who_add_infant"
+                        style="@style/MaterialCardView.Cleared"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                        android:layout_centerVertical="true">
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                    </com.google.android.material.card.MaterialCardView>
 
                 </RelativeLayout>
 
@@ -234,12 +276,20 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true">
 
-                    <ImageView
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_who_remove_pet"
+                        style="@style/MaterialCardView.Cleared"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                    </com.google.android.material.card.MaterialCardView>
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -249,13 +299,19 @@
                         android:text="0"
                         android:textColor="@color/gray_900" />
 
-                    <ImageView
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_who_add_pet"
+                        style="@style/MaterialCardView.Cleared"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                        android:layout_centerVertical="true">
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                    </com.google.android.material.card.MaterialCardView>
 
                 </RelativeLayout>
 
