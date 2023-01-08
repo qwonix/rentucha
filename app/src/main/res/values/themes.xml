@@ -52,4 +52,11 @@
         <item name="strokeWidth">0dp</item>
     </style>
 
+    <style name="MaterialCardView.ImageIconButton" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="android:layout_gravity">end|center_vertical</item>
+        <item name="cardCornerRadius">360dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="strokeColor">@color/gray_300</item>
+
+    </style>
 </resources>

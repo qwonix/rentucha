@@ -20,12 +20,10 @@
             android:layout_marginVertical="20dp">
 
             <com.google.android.material.card.MaterialCardView
+                style="@style/MaterialCardView.ImageIconButton"
                 android:id="@+id/search_settings_close_btn"
                 android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:cardCornerRadius="360dp"
-                app:cardElevation="4dp"
-                app:strokeColor="@color/gray_300">
+                android:layout_height="30dp">
 
                 <ImageView
                     android:layout_width="18dp"

@@ -49,13 +49,10 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/search_bar_filters"
+                    style="@style/MaterialCardView.ImageIconButton"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:layout_marginEnd="20dp"
-                    app:cardCornerRadius="360dp"
-                    app:cardElevation="4dp"
-                    app:strokeColor="@color/gray_300">
+                    android:layout_marginEnd="20dp">
 
                     <ImageView
                         android:layout_width="match_parent"
