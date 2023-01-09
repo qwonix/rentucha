@@ -39,7 +39,7 @@
                     android:layout_alignParentStart="true"
                     android:text="Adults"
                     android:textColor="@color/gray_900"
-                    android:textSize="16dp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
                     android:layout_alignParentBottom="true"
                     android:text="Ages 13 or above"
                     android:textColor="@color/gray_500"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
 
                 <RelativeLayout
@@ -72,6 +72,7 @@
 
 
                     <TextView
+                        android:id="@+id/text_who_adult_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -112,7 +113,7 @@
                     android:layout_alignParentStart="true"
                     android:text="Children"
                     android:textColor="@color/gray_900"
-                    android:textSize="16dp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -120,7 +121,7 @@
                     android:layout_alignParentBottom="true"
                     android:text="Ages 2-12"
                     android:textColor="@color/gray_500"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
 
                 <RelativeLayout
@@ -145,6 +146,7 @@
 
 
                     <TextView
+                        android:id="@+id/text_who_children_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -185,7 +187,7 @@
                     android:layout_alignParentStart="true"
                     android:text="Infants"
                     android:textColor="@color/gray_900"
-                    android:textSize="16dp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -193,7 +195,7 @@
                     android:layout_alignParentBottom="true"
                     android:text="Under 2"
                     android:textColor="@color/gray_500"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
 
                 <RelativeLayout
@@ -218,6 +220,7 @@
 
 
                     <TextView
+                        android:id="@+id/text_who_infants_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -257,9 +260,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:text="Pets"
-
                     android:textColor="@color/gray_900"
-                    android:textSize="16dp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -267,7 +269,7 @@
                     android:layout_alignParentBottom="true"
                     android:text="nice"
                     android:textColor="@color/gray_500"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
 
                 <RelativeLayout
@@ -292,6 +294,7 @@
 
 
                     <TextView
+                        android:id="@+id/text_who_pets_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
