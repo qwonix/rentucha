@@ -30,6 +30,9 @@ public class Apartment {
     @Column(nullable = false)
     private Double pricePerDay;
 
+    @Column(nullable = false)
+    private Double personCount;
+
     @OneToMany
     @JoinTable(
             name = "apartment_image",
