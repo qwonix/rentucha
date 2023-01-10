@@ -13,13 +13,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|center_vertical"
-        android:text="Куда" />
+        android:text="@string/where_settings" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|center_vertical"
-        android:text="Россия"
+        android:text="@string/where_settings_default"
         android:textColor="@color/black" />
 
 </com.google.android.material.card.MaterialCardView>

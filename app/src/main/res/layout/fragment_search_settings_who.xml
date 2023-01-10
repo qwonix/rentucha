@@ -13,13 +13,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|center_vertical"
-        android:text="Кто" />
+        android:text="@string/who_settings" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|center_vertical"
-        android:text="Добавить гостей"
+        android:text="@string/who_settings_default"
         android:textColor="@color/black" />
 
 

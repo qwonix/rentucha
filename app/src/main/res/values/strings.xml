@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">rentucha</string>
+
+    <string name="search_bar_where_to">Куда?</string>
+    <string name="search_bar_settings_description">Anywhere · Any week · Add guests</string>
+    <string name="apartments_count">apartments: NNN</string>
+    <string name="search_settings_clear">Очистить</string>
+    <string name="search_settings_search">Искать</string>
+    <string name="search_settings_stays">Stays</string>
+    <string name="when_settings">Когда</string>
+    <string name="when_settings_expanded">Когда?</string>
+    <string name="when_settings_default">Неделя</string>
+    <string name="when_settings_skip">Пропустить</string>
+    <string name="when_settings_next">Next</string>
+    <string name="where_settings">Куда</string>
+    <string name="where_settings_expanded">Куда?</string>
+    <string name="where_settings_default">Россия</string>
+    <string name="where_settings_search_destinations">Умный поиск</string>
+    <string name="who_settings">Кто</string>
+    <string name="who_settings_default">Добавить гостей</string>
+    <string name="who_settings_expanded">Кто?</string>
+    <string name="who_settings_expanded_adults">Adults</string>
+    <string name="who_settings_expanded_adults_description">Ages 13 or above</string>
+    <string name="who_settings_expanded_adults_count">0</string>
+    <string name="who_settings_expanded_children">Children</string>
+    <string name="who_settings_expanded_children_description">Ages 2–12</string>
+    <string name="who_settings_expanded_children_count">0</string>
+    <string name="who_settings_expanded_infants">Infants</string>
+    <string name="who_settings_expanded_infants_description">Under 2</string>
+    <string name="who_settings_expanded_infants_count">0</string>
+    <string name="who_settings_expanded_pets">Pets</string>
+    <string name="who_settings_expanded_pets_description">pets_link</string>
+    <string name="who_settings_expanded_pets_count">0</string>
 </resources>

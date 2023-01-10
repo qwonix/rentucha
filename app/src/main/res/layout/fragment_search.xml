@@ -38,15 +38,42 @@
             app:cardElevation="8dp"
             app:contentPadding="5dp">
 
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:drawablePadding="10dp"
                 android:gravity="center_vertical"
-                android:text="Куда?"
-                app:drawableLeftCompat="@drawable/ic_baseline_search_24" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_baseline_search_24" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search_bar_where_to"
+                        android:textColor="@color/gray_900"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search_bar_settings_description"
+                        android:textColor="@color/gray_500"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
 
 
             <com.google.android.material.card.MaterialCardView
