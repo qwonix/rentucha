@@ -1,8 +1,10 @@
 package ru.qwonix.rentucha.api.entity;
 
-import javax.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
+import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -52,5 +54,7 @@ public class Apartment {
     private Double latitude;
     private Double longitude;
 
-
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime creationTimestamp;
 }
