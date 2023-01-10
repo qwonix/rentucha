@@ -31,4 +31,8 @@
     <string name="who_settings_expanded_pets">Pets</string>
     <string name="who_settings_expanded_pets_description">pets_link</string>
     <string name="who_settings_expanded_pets_count">0</string>
+    <string name="apart_search_item_date">Добавлено 3 недели назад</string>
+    <string name="apart_search_item_location">Саратов, Россия</string>
+    <string name="apart_search_item_available_dates">Январь 14–19</string>
+    <string name="apart_search_item_price_per_night">$1234 ночь</string>
 </resources>
