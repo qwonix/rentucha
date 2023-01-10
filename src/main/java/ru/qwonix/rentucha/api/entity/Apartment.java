@@ -30,7 +30,7 @@ public class Apartment {
     private String localeName;
 
     @Column(nullable = false)
-    private Double pricePerDay;
+    private Double pricePerNight;
 
     @Column(nullable = false)
     private Double personCount;
