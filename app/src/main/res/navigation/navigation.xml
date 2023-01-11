@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/searchFragment">
+    app:startDestination="@id/mapFragment">
 
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="ru.qwonix.android.rentucha.fragments.search.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search">
+        android:id="@+id/mapFragment"
+        android:name="ru.qwonix.android.rentucha.fragments.search.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map">
         <action
-            android:id="@+id/action_searchFragment_to_searchSettingsFragment"
+            android:id="@+id/action_mapFragment_to_searchSettingsFragment"
             app:destination="@id/searchSettingsFragment" />
     </fragment>
     <fragment
@@ -40,7 +40,7 @@
         android:label="fragment_search_settings"
         tools:layout="@layout/fragment_search_settings">
         <action
-            android:id="@+id/action_searchSettingsFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            android:id="@+id/action_searchSettingsFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
 </navigation>

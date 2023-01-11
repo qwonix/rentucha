@@ -22,5 +22,17 @@
         <action
             android:id="@+id/action_searchSettingsWhereExpandedFragment_to_searchSettingsWhereFragment"
             app:destination="@id/searchSettingsWhereFragment" />
+        <action
+            android:id="@+id/action_searchSettingsWhereExpandedFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="ru.qwonix.android.rentucha.fragments.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_searchSettingsWhereExpandedFragment"
+            app:destination="@id/searchSettingsWhereExpandedFragment" />
     </fragment>
 </navigation>

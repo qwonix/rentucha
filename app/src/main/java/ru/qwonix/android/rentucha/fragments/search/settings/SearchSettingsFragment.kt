@@ -13,7 +13,7 @@ class SearchSettingsFragment : Fragment(R.layout.fragment_search_settings) {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<MaterialCardView>(R.id.search_settings_close_btn).setOnClickListener {
-            findNavController().navigate(R.id.action_searchSettingsFragment_to_searchFragment)
+            findNavController().navigate(R.id.action_searchSettingsFragment_to_mapFragment)
             val bottomNavigationView =
                 view.rootView.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
             bottomNavigationView.animate()
