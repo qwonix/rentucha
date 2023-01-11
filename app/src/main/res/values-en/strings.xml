@@ -14,7 +14,7 @@
     <string name="who_settings_expanded_pets_description">pets_link</string>
     <string name="search_bar_settings_description">Anywhere · Any week · Add guests</string>
     <string name="apartments_count">apartments: NNN</string>
-    <string name="search_settings_clear">Clear</string>
+    <string name="search_settings_clear"><u>Clear</u></string>
     <string name="search_settings_search">Search</string>
     <string name="when_settings">When</string>
     <string name="when_settings_expanded">When?</string>

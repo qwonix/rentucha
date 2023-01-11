@@ -4,7 +4,7 @@
     <string name="search_bar_where_to">Куда?</string>
     <string name="search_bar_settings_description">Anywhere · Any week · Add guests</string>
     <string name="apartments_count">apartments: NNN</string>
-    <string name="search_settings_clear">Очистить</string>
+    <string name="search_settings_clear"><u>Очистить</u></string>
     <string name="search_settings_search">Искать</string>
     <string name="search_settings_stays">Stays</string>
     <string name="when_settings">Когда</string>

@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">rentucha</string>
     <string name="search_bar_where_to">Куда?</string>
-    <string name="search_settings_clear">Очистить</string>
+    <string name="search_settings_clear"><u>Очистить</u></string>
     <string name="search_settings_search">Искать</string>
     <string name="when_settings">Когда</string>
     <string name="when_settings_expanded">Когда?</string>
