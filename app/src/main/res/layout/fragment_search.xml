@@ -5,13 +5,15 @@
     style="@style/MaterialCardView.SearchSettings.Selected"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.search.settings.expanded.SearchSettingsWhenExpandedFragment">
+    tools:context="ru.qwonix.android.rentucha.fragments.search.SearchFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical"
         android:padding="20dp">
+
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
@@ -43,11 +45,21 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_search_query_results"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="25dp" />
+            android:orientation="vertical">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_search_query_results"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp" />
+
+            <!-- todo: remove view -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
