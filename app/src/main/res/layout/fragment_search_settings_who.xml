@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_who_search_setting"
-    style="@style/MaterialCardView.SearchSettings"
-    android:layout_width="match_parent"
-    android:layout_height="65dp"
-    app:contentPadding="24dp"
-    tools:context=".fragments.search.settings.SearchSettingsWhoFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start|center_vertical"
-        android:text="@string/who_settings" />
+    <data>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|center_vertical"
-        android:text="@string/who_settings_default"
-        android:textColor="@color/black" />
+        <variable
+            name="viewModel"
+            type="ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_who_search_setting"
+        style="@style/MaterialCardView.SearchSettings"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:contentPadding="24dp"
+        tools:context=".fragments.search.settings.SearchSettingsWhoFragment">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:text="@string/who_settings" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:text="@string/who_settings_default"
+            android:textColor="@color/black" />
 
 
-</com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

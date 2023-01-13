@@ -1,328 +1,333 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/MaterialCardView.SearchSettings.Selected"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".fragments.search.settings.expanded.SearchSettingsWhoExpandedFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-    <LinearLayout
+        <variable
+            name="viewModel"
+            type="ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/MaterialCardView.SearchSettings.Selected"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/who_settings_expanded"
-            android:textColor="@color/gray_900"
-            android:textSize="24sp" />
+        android:layout_height="wrap_content"
+        tools:context=".fragments.search.settings.expanded.SearchSettingsWhoExpandedFragment">
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="@string/who_settings_expanded_adults"
-                    android:textColor="@color/gray_900"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:text="@string/who_settings_expanded_adults_description"
-                    android:textColor="@color/gray_500"
-                    android:textSize="12sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/who_settings_expanded"
+                android:textColor="@color/gray_900"
+                android:textSize="24sp" />
 
 
-                <RelativeLayout
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_who_remove_adult"
-                        style="@style/MaterialCardView.Cleared"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_baseline_remove_circle_outline_24" />
-                    </com.google.android.material.card.MaterialCardView>
-
-
-                    <TextView
-                        android:id="@+id/text_who_adult_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/who_settings_expanded_adults_count"
-                        android:textColor="@color/gray_900" />
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_who_add_adult"
-                        style="@style/MaterialCardView.Cleared"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_baseline_add_circle_outline_24" />
-                    </com.google.android.material.card.MaterialCardView>
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-
-            <com.google.android.material.divider.MaterialDivider
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="15dp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="@string/who_settings_expanded_children"
-                    android:textColor="@color/gray_900"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:text="@string/who_settings_expanded_children_description"
-                    android:textColor="@color/gray_500"
-                    android:textSize="12sp" />
-
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_who_remove_child"
-                        style="@style/MaterialCardView.Cleared"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_baseline_remove_circle_outline_24" />
-                    </com.google.android.material.card.MaterialCardView>
-
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
 
                     <TextView
-                        android:id="@+id/text_who_children_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/who_settings_expanded_children_count"
-                        android:textColor="@color/gray_900" />
+                        android:layout_alignParentStart="true"
+                        android:text="@string/who_settings_expanded_adults"
+                        android:textColor="@color/gray_900"
+                        android:textSize="16sp" />
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_who_add_child"
-                        style="@style/MaterialCardView.Cleared"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="@string/who_settings_expanded_adults_description"
+                        android:textColor="@color/gray_500"
+                        android:textSize="12sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true">
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_baseline_add_circle_outline_24" />
-                    </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/button_who_remove_adult"
+                            style="@style/MaterialCardView.Cleared"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <TextView
+                            android:id="@+id/text_who_adult_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/who_settings_expanded_adults_count"
+                            android:textColor="@color/gray_900" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/button_who_add_adult"
+                            style="@style/MaterialCardView.Cleared"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </RelativeLayout>
 
                 </RelativeLayout>
 
-            </RelativeLayout>
-
-            <com.google.android.material.divider.MaterialDivider
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="15dp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="@string/who_settings_expanded_infants"
-                    android:textColor="@color/gray_900"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:text="@string/who_settings_expanded_infants_description"
-                    android:textColor="@color/gray_500"
-                    android:textSize="12sp" />
-
+                    android:layout_marginVertical="15dp" />
 
                 <RelativeLayout
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_who_remove_infant"
-                        style="@style/MaterialCardView.Cleared"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_baseline_remove_circle_outline_24" />
-                    </com.google.android.material.card.MaterialCardView>
-
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
 
                     <TextView
-                        android:id="@+id/text_who_infants_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/who_settings_expanded_infants_count"
-                        android:textColor="@color/gray_900" />
+                        android:layout_alignParentStart="true"
+                        android:text="@string/who_settings_expanded_children"
+                        android:textColor="@color/gray_900"
+                        android:textSize="16sp" />
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_who_add_infant"
-                        style="@style/MaterialCardView.Cleared"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="@string/who_settings_expanded_children_description"
+                        android:textColor="@color/gray_500"
+                        android:textSize="12sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true">
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_baseline_add_circle_outline_24" />
-                    </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/button_who_remove_child"
+                            style="@style/MaterialCardView.Cleared"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <TextView
+                            android:id="@+id/text_who_children_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/who_settings_expanded_children_count"
+                            android:textColor="@color/gray_900" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/button_who_add_child"
+                            style="@style/MaterialCardView.Cleared"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </RelativeLayout>
 
                 </RelativeLayout>
 
-            </RelativeLayout>
-
-            <com.google.android.material.divider.MaterialDivider
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="15dp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="@string/who_settings_expanded_pets"
-                    android:textColor="@color/gray_900"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:text="@string/who_settings_expanded_pets_description"
-                    android:textColor="@color/gray_500"
-                    android:textSize="12sp" />
-
+                    android:layout_marginVertical="15dp" />
 
                 <RelativeLayout
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_who_remove_pet"
-                        style="@style/MaterialCardView.Cleared"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_baseline_remove_circle_outline_24" />
-                    </com.google.android.material.card.MaterialCardView>
-
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
 
                     <TextView
-                        android:id="@+id/text_who_pets_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/who_settings_expanded_pets_count"
-                        android:textColor="@color/gray_900" />
+                        android:layout_alignParentStart="true"
+                        android:text="@string/who_settings_expanded_infants"
+                        android:textColor="@color/gray_900"
+                        android:textSize="16sp" />
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_who_add_pet"
-                        style="@style/MaterialCardView.Cleared"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="@string/who_settings_expanded_infants_description"
+                        android:textColor="@color/gray_500"
+                        android:textSize="12sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true">
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_baseline_add_circle_outline_24" />
-                    </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/button_who_remove_infant"
+                            style="@style/MaterialCardView.Cleared"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <TextView
+                            android:id="@+id/text_who_infants_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/who_settings_expanded_infants_count"
+                            android:textColor="@color/gray_900" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/button_who_add_infant"
+                            style="@style/MaterialCardView.Cleared"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </RelativeLayout>
 
                 </RelativeLayout>
 
-            </RelativeLayout>
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp" />
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/who_settings_expanded_pets"
+                        android:textColor="@color/gray_900"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="@string/who_settings_expanded_pets_description"
+                        android:textColor="@color/gray_500"
+                        android:textSize="12sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/button_who_remove_pet"
+                            style="@style/MaterialCardView.Cleared"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <TextView
+                            android:id="@+id/text_who_pets_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/who_settings_expanded_pets_count"
+                            android:textColor="@color/gray_900" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/button_who_add_pet"
+                            style="@style/MaterialCardView.Cleared"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-
-    </LinearLayout>
-
-
-</com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

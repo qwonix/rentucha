@@ -6,13 +6,29 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.card.MaterialCardView
 import ru.qwonix.android.rentucha.R
+import ru.qwonix.android.rentucha.databinding.FragmentMapBinding
 
 class MapFragment : Fragment(R.layout.fragment_map) {
+    private lateinit var binding: FragmentMapBinding
+    private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding =
+            FragmentMapBinding.inflate(inflater, container, false)
+        binding.apply { viewModel = sharedSearchSettingsViewModel }
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -54,15 +70,6 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         val searchBarFiltersCardView = view.findViewById<MaterialCardView>(R.id.search_bar_filters)
         searchBarFiltersCardView.setOnClickListener { println("on searchBarFilters click") }
 
-
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
 
     }
 }
