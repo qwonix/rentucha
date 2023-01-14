@@ -25,7 +25,11 @@ class MapFragment : Fragment(R.layout.fragment_map) {
     ): View {
         binding =
             FragmentMapBinding.inflate(inflater, container, false)
-        binding.apply { viewModel = sharedSearchSettingsViewModel }
+        binding.apply {
+            viewModel = sharedSearchSettingsViewModel
+            lifecycleOwner = viewLifecycleOwner
+        }
+
         return binding.root
     }
 
@@ -66,10 +70,5 @@ class MapFragment : Fragment(R.layout.fragment_map) {
                 .yBy(bottomNavigationView.height.toFloat())
                 .setDuration(300).start()
         }
-
-        val searchBarFiltersCardView = view.findViewById<MaterialCardView>(R.id.search_bar_filters)
-        searchBarFiltersCardView.setOnClickListener { println("on searchBarFilters click") }
-
-
     }
 }

@@ -8,18 +8,22 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.google.android.material.textfield.TextInputEditText
 import ru.qwonix.android.rentucha.R
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
+    private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val editText = view.findViewById<TextInputEditText>(R.id.edit_text_search_query)
-        editText.focusAndShowKeyboard()
-        editText.onSearch {
-            println(editText.text.toString())
+        val editTextSearchQuery = view.findViewById<TextInputEditText>(R.id.edit_text_search_query)
+        editTextSearchQuery.focusAndShowKeyboard()
+        editTextSearchQuery.onSearch {
+            sharedSearchSettingsViewModel.setSearchQuery(editTextSearchQuery.text.toString())
+
             view.findNavController()
                 .navigate(R.id.action_searchFragment_to_searchSettingsWhereExpandedFragment)
         }
