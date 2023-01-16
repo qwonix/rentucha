@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.findNavController
-import com.google.android.material.card.MaterialCardView
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentSearchSettingsWhereBinding
 import ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel
+import ru.qwonix.android.rentucha.viewmodel.NavigationViewModel
 
 class SearchSettingsWhereFragment : Fragment(R.layout.fragment_search_settings_where) {
     private lateinit var binding: FragmentSearchSettingsWhereBinding
     private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
+    private val sharedNavigationViewModel: NavigationViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,9 +30,13 @@ class SearchSettingsWhereFragment : Fragment(R.layout.fragment_search_settings_w
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<MaterialCardView>(R.id.card_where_search_setting).setOnClickListener {
-            view.findNavController()
+
+        binding.cardWhereSearchSetting.setOnClickListener {
+            sharedNavigationViewModel.whereNavController
                 .navigate(R.id.action_searchSettingsWhereFragment_to_searchSettingsWhereExpandedFragment)
+
+            sharedNavigationViewModel.whenNavController.navigate(R.id.searchSettingsWhenFragment)
+            sharedNavigationViewModel.whoNavController.navigate(R.id.searchSettingsWhoFragment)
         }
     }
 }

@@ -11,12 +11,14 @@ import com.google.android.material.card.MaterialCardView
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentSearchSettingsWhereExpandedBinding
 import ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel
+import ru.qwonix.android.rentucha.viewmodel.NavigationViewModel
 
 class SearchSettingsWhereExpandedFragment :
     Fragment(R.layout.fragment_search_settings_where_expanded) {
 
     private lateinit var binding: FragmentSearchSettingsWhereExpandedBinding
     private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
+    private val sharedNavigationViewModel: NavigationViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,6 +33,7 @@ class SearchSettingsWhereExpandedFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sharedNavigationViewModel.whereNavController = view.findNavController()
 
         view.findViewById<MaterialCardView>(R.id.where_expanded_search_bar)
             .setOnClickListener {
