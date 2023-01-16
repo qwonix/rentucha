@@ -11,4 +11,15 @@ class SearchSettingsViewModel : ViewModel() {
     fun setSearchQuery(searchQuery: String) {
         _searchQuery.postValue(searchQuery)
     }
+
+    fun hasSearchQuery(): Boolean {
+        return searchQuery.value != null
+    }
+
+    fun getSearchQueryOrElseEmptyStrings(): String {
+        return if (searchQuery.value == null)
+            ""
+        else searchQuery.value.toString()
+    }
+
 }
