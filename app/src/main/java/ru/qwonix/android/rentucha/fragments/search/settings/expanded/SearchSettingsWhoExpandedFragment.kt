@@ -21,7 +21,10 @@ class SearchSettingsWhoExpandedFragment : Fragment(R.layout.fragment_search_sett
     ): View {
         binding =
             FragmentSearchSettingsWhoExpandedBinding.inflate(inflater, container, false)
-        binding.apply { viewModel = sharedSearchSettingsViewModel }
+        binding.apply {
+            viewModel = sharedSearchSettingsViewModel
+            lifecycleOwner = viewLifecycleOwner
+        }
         return binding.root
     }
 }

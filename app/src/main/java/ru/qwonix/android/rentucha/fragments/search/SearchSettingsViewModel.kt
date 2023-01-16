@@ -8,6 +8,51 @@ class SearchSettingsViewModel : ViewModel() {
     private val _searchQuery = MutableLiveData<String>()
     val searchQuery: LiveData<String> = _searchQuery
 
+    private val _adultsCount = MutableLiveData<Int>(1)
+    val adultsCount: LiveData<Int> = _adultsCount
+
+    private val _childrenCount = MutableLiveData<Int>(0)
+    val childrenCount: LiveData<Int> = _childrenCount
+
+    private val _infantsCount = MutableLiveData<Int>(0)
+    val infantsCount: LiveData<Int> = _infantsCount
+
+    private val _petsCount = MutableLiveData<Int>(0)
+    val petsCount: LiveData<Int> = _petsCount
+
+    fun addAdult() {
+        _adultsCount.postValue(_adultsCount.value?.plus(1) ?: 0)
+    }
+
+    fun addChild() {
+        _childrenCount.postValue(_childrenCount.value?.plus(1) ?: 0)
+    }
+
+    fun addInfant() {
+        _infantsCount.postValue(_infantsCount.value?.plus(1) ?: 0)
+    }
+
+    fun addPet() {
+        _petsCount.postValue(_petsCount.value?.plus(1) ?: 0)
+    }
+
+    fun removeAdult() {
+        _adultsCount.postValue(_adultsCount.value?.minus(1) ?: 0)
+    }
+
+    fun removeChild() {
+        _childrenCount.postValue(_childrenCount.value?.minus(1) ?: 0)
+    }
+
+    fun removeInfant() {
+        _infantsCount.postValue(_infantsCount.value?.minus(1) ?: 0)
+    }
+
+    fun removePet() {
+        _petsCount.postValue(_petsCount.value?.minus(1) ?: 0)
+    }
+
+
     fun setSearchQuery(searchQuery: String) {
         _searchQuery.postValue(searchQuery)
     }
