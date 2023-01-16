@@ -19,13 +19,6 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
     private lateinit var binding: FragmentSearchBinding
     private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
 
-    override fun onResume() {
-        super.onResume()
-        binding.editTextSearchQuery.setText(sharedSearchSettingsViewModel.getSearchQueryOrElseEmptyStrings())
-        // set cursor to end
-        binding.editTextSearchQuery.setSelection(binding.editTextSearchQuery.length())
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,6 +26,10 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
     ): View {
         binding =
             FragmentSearchBinding.inflate(inflater, container, false)
+        binding.apply {
+            viewModel = sharedSearchSettingsViewModel
+            lifecycleOwner = viewLifecycleOwner
+        }
         return binding.root
     }
 
