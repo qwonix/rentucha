@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel" />
@@ -69,7 +70,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="top"
-                            android:text="@{viewModel.searchQuery != null ? viewModel.searchQuery : @string/search_bar_where_to}"
+                            android:text="@{viewModel.hasSearchQuery() ? viewModel.searchQuery : @string/search_bar_where_to}"
                             android:textColor="@color/gray_900"
                             android:textSize="16sp" />
 
