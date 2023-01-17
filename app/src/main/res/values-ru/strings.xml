@@ -35,4 +35,5 @@
     <string name="apart_search_item_available_dates">Январь 14–19</string>
     <string name="apart_search_item_price_per_night">$1234 ночь</string>
     <string name="search_settings_stays">Места</string>
+    <string name="who_settings_description">%1$s гостей</string>
 </resources>

@@ -63,10 +63,24 @@ class SearchSettingsViewModel : ViewModel() {
             text += _searchQuery.value + " · "
         }
 
-        text += (_adultsCount.value!! + _childrenCount.value!! + _infantsCount.value!! + _petsCount.value!!).toString() + " guests"
+        text += getGuestsCount().toString() + " guests"
 
         return text;
     }
+
+    fun getGuestsCount(): Int {
+        val guestsCount = listOf(
+            _adultsCount.value,
+            _childrenCount.value,
+            _infantsCount.value,
+            _petsCount.value
+        )
+        var sum = 0;
+        guestsCount.forEach { if (it != null) sum += it }
+
+        return sum;
+    }
+
 
     fun hasSearchQuery(): Boolean {
         return searchQuery.value != null

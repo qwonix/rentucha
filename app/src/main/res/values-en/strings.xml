@@ -27,6 +27,7 @@
     <string name="who_settings">Who</string>
     <string name="who_settings_default">Add guests</string>
     <string name="who_settings_expanded">Who?</string>
+    <string name="who_settings_description">%1$s guests</string>
     <string name="who_settings_expanded_adults_count">0</string>
     <string name="who_settings_expanded_children_count">0</string>
     <string name="who_settings_expanded_infants_count">0</string>

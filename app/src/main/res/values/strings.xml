@@ -18,6 +18,7 @@
     <string name="where_settings_search_destinations">Умный поиск</string>
     <string name="who_settings">Кто</string>
     <string name="who_settings_default">Добавить гостей</string>
+    <string name="who_settings_description">%1$s guests</string>
     <string name="who_settings_expanded">Кто?</string>
     <string name="who_settings_expanded_adults">Adults</string>
     <string name="who_settings_expanded_adults_description">Ages 13 or above</string>
