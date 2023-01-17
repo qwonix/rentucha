@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "ru.qwonix.android.rentucha"
-        minSdk 21
+        minSdk 31
         targetSdk 33
         versionCode 1
         versionName "1.0"
