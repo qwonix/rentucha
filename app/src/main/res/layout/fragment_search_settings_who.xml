@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
             tools:text="@string/who_settings_default"
-            android:text="@{viewModel.guestsCount == 0 ? @string/who_settings_default : @string/who_settings_description(viewModel.guestsCount)}"
+            android:text="@{viewModel.guestsCount != 0 ? @string/who_settings_description(viewModel.guestsCount) : @string/who_settings_default}"
             android:textColor="@color/black" />
 
 

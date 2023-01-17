@@ -28,8 +28,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
-            android:text="@string/where_settings_default"
-            android:textColor="@color/black" />
+            android:text="@{viewModel.hasSearchQuery() ? viewModel.searchQuery : @string/where_settings_default}"
+            android:textColor="@color/black"
+            tools:text="@string/where_settings_default" />
 
     </com.google.android.material.card.MaterialCardView>
 </layout>

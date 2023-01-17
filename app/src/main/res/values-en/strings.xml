@@ -18,7 +18,7 @@
     <string name="search_settings_search">Search</string>
     <string name="when_settings">When</string>
     <string name="when_settings_expanded">When?</string>
-    <string name="when_settings_default">Week</string>
+    <string name="when_settings_default">Any week</string>
     <string name="when_settings_skip">Skip</string>
     <string name="where_settings">Where</string>
     <string name="where_settings_expanded">Where?</string>
