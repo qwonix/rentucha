@@ -85,6 +85,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
+                            tools:text="@string/who_settings_expanded_adults_count"
                             android:text="@{String.valueOf(viewModel.adultsCount)}"
                             android:textColor="@color/gray_900" />
 
@@ -158,6 +159,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
+                            tools:text="@string/who_settings_expanded_children_count"
                             android:text="@{String.valueOf(viewModel.childrenCount)}"
                             android:textColor="@color/gray_900" />
 
@@ -231,6 +233,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
+                            tools:text="@string/who_settings_expanded_infants_count"
                             android:text="@{String.valueOf(viewModel.infantsCount)}"
                             android:textColor="@color/gray_900" />
 
@@ -304,6 +307,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
+                            tools:text="@string/who_settings_expanded_pets_count"
                             android:text="@{String.valueOf(viewModel.petsCount)}"
                             android:textColor="@color/gray_900" />
 

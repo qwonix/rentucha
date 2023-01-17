@@ -54,7 +54,8 @@
                     android:layout_marginStart="50dp"
                     android:gravity="center_vertical"
                     android:text="@{viewModel.hasSearchQuery() ? viewModel.searchQuery : @string/where_settings_search_destinations}"
-                    android:textColor="@color/gray_900" />
+                    android:textColor="@color/gray_900"
+                    tools:text="@string/where_settings_search_destinations" />
 
 
             </com.google.android.material.card.MaterialCardView>
