@@ -28,6 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:text="@{viewModel.hasSearchQuery() ? viewModel.searchQuery : @string/where_settings_default}"
             android:textColor="@color/black"
             tools:text="@string/where_settings_default" />

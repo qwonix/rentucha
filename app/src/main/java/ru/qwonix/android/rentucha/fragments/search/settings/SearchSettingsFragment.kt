@@ -10,11 +10,13 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentSearchSettingsBinding
+import ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel
 import ru.qwonix.android.rentucha.viewmodel.NavigationViewModel
 
 class SearchSettingsFragment : Fragment(R.layout.fragment_search_settings) {
 
     lateinit var binding: FragmentSearchSettingsBinding
+    private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
     private val sharedNavigationViewModel: NavigationViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -35,6 +37,8 @@ class SearchSettingsFragment : Fragment(R.layout.fragment_search_settings) {
             sharedNavigationViewModel.whereNavController.navigate(R.id.searchSettingsWhereExpandedFragment)
             sharedNavigationViewModel.whenNavController.navigate(R.id.searchSettingsWhenFragment)
             sharedNavigationViewModel.whoNavController.navigate(R.id.searchSettingsWhoFragment)
+
+            sharedSearchSettingsViewModel.clearSettings()
         }
 
         val closeSearchSettings: (v: View) -> Unit = {
