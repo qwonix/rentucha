@@ -70,17 +70,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="top"
-                            tools:text="@string/search_bar_where_to"
                             android:text="@{viewModel.hasSearchQuery() ? viewModel.searchQuery : @string/search_bar_where_to}"
                             android:textColor="@color/gray_900"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            tools:text="@string/search_bar_where_to" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/search_bar_settings_description"
+                            android:text="@{viewModel.getSearchBarSettingsDescriptionText()}"
                             android:textColor="@color/gray_500"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:text="@string/search_bar_settings_description" />
                     </LinearLayout>
 
 

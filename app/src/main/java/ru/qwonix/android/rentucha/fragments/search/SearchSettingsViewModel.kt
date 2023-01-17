@@ -57,6 +57,17 @@ class SearchSettingsViewModel : ViewModel() {
         _searchQuery.postValue(searchQuery)
     }
 
+    fun getSearchBarSettingsDescriptionText(): String {
+        var text = "";
+        if (_searchQuery.value != null) {
+            text += _searchQuery.value + " · "
+        }
+
+        text += (_adultsCount.value!! + _childrenCount.value!! + _infantsCount.value!! + _petsCount.value!!).toString() + " guests"
+
+        return text;
+    }
+
     fun hasSearchQuery(): Boolean {
         return searchQuery.value != null
     }
