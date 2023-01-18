@@ -8,7 +8,7 @@ class SearchSettingsViewModel : ViewModel() {
     private val _searchQuery = MutableLiveData<String>()
     val searchQuery: LiveData<String> = _searchQuery
 
-    private val _adultsCount = MutableLiveData<Int>(1)
+    private val _adultsCount = MutableLiveData<Int>(0)
     val adultsCount: LiveData<Int> = _adultsCount
 
     private val _childrenCount = MutableLiveData<Int>(0)
@@ -52,20 +52,21 @@ class SearchSettingsViewModel : ViewModel() {
         _petsCount.postValue(_petsCount.value?.minus(1) ?: 0)
     }
 
+    fun clearSettings() {
+        _searchQuery.postValue("")
+
+        _adultsCount.postValue(0)
+        _childrenCount.postValue(0)
+        _infantsCount.postValue(0)
+        _petsCount.postValue(0)
+    }
 
     fun setSearchQuery(searchQuery: String) {
         _searchQuery.postValue(searchQuery)
     }
 
     fun getSearchBarSettingsDescriptionText(): String {
-        var text = "";
-        if (_searchQuery.value != null) {
-            text += _searchQuery.value + " · "
-        }
-
-        text += getGuestsCount().toString() + " guests"
-
-        return text;
+        return getGuestsCount().toString() + " guests"
     }
 
     fun getGuestsCount(): Int {
@@ -83,7 +84,7 @@ class SearchSettingsViewModel : ViewModel() {
 
 
     fun hasSearchQuery(): Boolean {
-        return searchQuery.value != null
+        return _searchQuery.value != null && _searchQuery.value?.isNotBlank() ?: false
     }
 
     fun getSearchQueryOrElseEmptyStrings(): String {
