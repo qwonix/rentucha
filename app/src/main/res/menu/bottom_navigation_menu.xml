@@ -3,24 +3,24 @@
     <item
         android:id="@+id/mapFragment"
         android:icon="@drawable/ic_baseline_explore_32"
-        android:title="Поиск" />
+        android:title="@string/menu_page_search" />
 
     <item
         android:id="@+id/wishlistFragment"
         android:icon="@drawable/ic_baseline_favorite_border_32"
-        android:title="Вишлисты" />
+        android:title="@string/menu_page_wishlist" />
 
     <item
         android:id="@+id/tripsFragment"
         android:icon="@drawable/file"
-        android:title="Поездки" />
+        android:title="@string/menu_page_trips" />
     <item
         android:id="@+id/inboxFragment"
         android:icon="@drawable/ic_baseline_inbox_32"
-        android:title="Входящие" />
+        android:title="@string/menu_page_indox" />
     <item
         android:id="@+id/logInFragment"
         android:icon="@drawable/ic_outline_account_circle_32"
-        android:title="Log In" />
+        android:title="@string/menu_page_login" />
 
 </menu>

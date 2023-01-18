@@ -14,7 +14,7 @@
     <string name="when_settings_next">Next</string>
     <string name="where_settings">Куда</string>
     <string name="where_settings_expanded">Куда?</string>
-    <string name="where_settings_default">Россия</string>
+    <string name="where_settings_default">I\'am flexible</string>
     <string name="where_settings_search_destinations">Умный поиск</string>
     <string name="who_settings">Кто</string>
     <string name="who_settings_default">Добавить гостей</string>
@@ -36,4 +36,9 @@
     <string name="apart_search_item_location">Саратов, Россия</string>
     <string name="apart_search_item_available_dates">Январь 14–19</string>
     <string name="apart_search_item_price_per_night">$1234 ночь</string>
+    <string name="menu_page_search">Поиск</string>
+    <string name="menu_page_wishlist">Вишлисты</string>
+    <string name="menu_page_trips">Поездки</string>
+    <string name="menu_page_indox">Входящие</string>
+    <string name="menu_page_login">Log In</string>
 </resources>

@@ -22,7 +22,7 @@
     <string name="when_settings_skip">Skip</string>
     <string name="where_settings">Where</string>
     <string name="where_settings_expanded">Where?</string>
-    <string name="where_settings_default">Russia</string>
+    <string name="where_settings_default">I\'am flexible</string>
     <string name="where_settings_search_destinations">Search</string>
     <string name="who_settings">Who</string>
     <string name="who_settings_default">Add guests</string>
@@ -36,4 +36,9 @@
     <string name="apart_search_item_price_per_night">$1234 night</string>
     <string name="apart_search_item_location">Saratov, Russia</string>
     <string name="apart_search_item_date">Add 3 weeks ago</string>
+    <string name="menu_page_search">Search</string>
+    <string name="menu_page_wishlist">Wishlist</string>
+    <string name="menu_page_trips">Trips</string>
+    <string name="menu_page_indox">Indox</string>
+    <string name="menu_page_login">Log In</string>
 </resources>

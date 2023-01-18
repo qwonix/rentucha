@@ -10,7 +10,7 @@
     <string name="when_settings_skip">Пропустить</string>
     <string name="where_settings">Куда</string>
     <string name="where_settings_expanded">Куда?</string>
-    <string name="where_settings_default">Россия</string>
+    <string name="where_settings_default">Гибкий поиск</string>
     <string name="where_settings_search_destinations">Умный поиск</string>
     <string name="who_settings">Кто</string>
     <string name="who_settings_default">Добавить гостей</string>
@@ -36,4 +36,9 @@
     <string name="apart_search_item_price_per_night">$1234 ночь</string>
     <string name="search_settings_stays">Места</string>
     <string name="who_settings_description">%1$s гостей</string>
+    <string name="menu_page_search">Поиск</string>
+    <string name="menu_page_wishlist">Вишлисты</string>
+    <string name="menu_page_trips">Поездки</string>
+    <string name="menu_page_indox">Входящие</string>
+    <string name="menu_page_login">Вход</string>
 </resources>
