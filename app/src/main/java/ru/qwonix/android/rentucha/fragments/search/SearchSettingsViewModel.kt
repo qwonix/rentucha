@@ -38,6 +38,9 @@ class SearchSettingsViewModel : ViewModel() {
     )
     val apartments: LiveData<List<Apartment>> = _apartments
 
+    fun getApartmentsCount(): Int {
+        return _apartments.value?.size ?: 0
+    }
 
     fun addAdult() {
         _adultsCount.postValue(_adultsCount.value?.plus(1) ?: 0)

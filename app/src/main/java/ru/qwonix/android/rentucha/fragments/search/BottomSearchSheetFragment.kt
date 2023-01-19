@@ -28,7 +28,7 @@ class BottomSearchSheetFragment : Fragment(R.layout.fragment_search_bottom_sheet
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // TODO: add observer 
+        // TODO: add observer
         val adapter = ApartmentsAdapter(sharedSearchSettingsViewModel.apartments.value!!)
 
         binding.recyclerSearchApartments.adapter = adapter

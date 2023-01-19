@@ -16,7 +16,7 @@
     <string name="who_settings_default">Добавить гостей</string>
     <string name="who_settings_expanded">Кто?</string>
     <string name="search_bar_settings_description">Anywhere · Any week · Add guests</string>
-    <string name="apartments_count">apartments: NNN</string>
+    <string name="apartments_count">апартаментов: %1$d</string>
     <string name="when_settings_next">Далее</string>
     <string name="who_settings_expanded_adults">Взрослые</string>
     <string name="who_settings_expanded_adults_description">Старше 12 лет</string>
