@@ -38,6 +38,9 @@ android {
 }
 
 dependencies {
+    implementation 'com.squareup.picasso:picasso:2.8'
+    implementation 'com.yandex.android:maps.mobile:4.2.2-lite'
+
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
     implementation 'androidx.core:core-ktx:1.9.0'

@@ -16,14 +16,15 @@
         android:orientation="vertical"
         tools:context=".fragments.search.MapFragment">
 
-        <View
+        <com.yandex.mapkit.mapview.MapView
+            android:id="@+id/mapview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/gray_900" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/containerBottomSheet"
-            android:name="ru.qwonix.android.rentucha.fragments.search.BottomSheetFragment"
+            android:name="ru.qwonix.android.rentucha.fragments.search.BottomSearchSheetFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:behavior_hideable="false"
@@ -31,82 +32,73 @@
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
             tools:layout="@layout/fragment_search_bottom_sheet" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/search_bar"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="8dp"
-                app:contentPadding="5dp">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="8dp"
+            app:contentPadding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_baseline_search_24" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_baseline_search_24" />
+                    <!-- fixme: no ellipsize -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:maxLines="1"
+                        android:text="@{viewModel.hasSearchQuery() ? viewModel.searchQuery : @string/search_bar_where_to}"
+                        android:textColor="@color/gray_900"
+                        android:textSize="16sp"
+                        tools:text="@string/search_bar_where_to" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
-
-                        <!-- fixme: no ellipsize -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:maxLines="1"
-                            android:text="@{viewModel.hasSearchQuery() ? viewModel.searchQuery : @string/search_bar_where_to}"
-                            android:textColor="@color/gray_900"
-                            android:textSize="16sp"
-                            tools:text="@string/search_bar_where_to" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@{viewModel.getSearchBarSettingsDescriptionText()}"
-                            android:textColor="@color/gray_500"
-                            android:textSize="12sp"
-                            tools:text="@string/search_bar_settings_description" />
-                    </LinearLayout>
-
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.getSearchBarSettingsDescriptionText()}"
+                        android:textColor="@color/gray_500"
+                        android:textSize="12sp"
+                        tools:text="@string/search_bar_settings_description" />
                 </LinearLayout>
+            </LinearLayout>
 
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/search_bar_filters"
+                style="@style/MaterialCardView.ImageIconButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="20dp">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/search_bar_filters"
-                    style="@style/MaterialCardView.ImageIconButton"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="20dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/ic_baseline_tune_24" />
-                </com.google.android.material.card.MaterialCardView>
-
-
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_baseline_tune_24" />
             </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

@@ -10,7 +10,7 @@
         style="@style/MaterialCardView.Corners"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        app:cardElevation="9dp">
+        app:cardElevation="0dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="55dp"
@@ -34,6 +34,7 @@
         android:id="@+id/recycler_search_apartments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:padding="15dp"
         tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_search_apartment"

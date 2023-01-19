@@ -35,7 +35,7 @@
     <string name="apart_search_item_date">Добавлено 3 недели назад</string>
     <string name="apart_search_item_location">Саратов, Россия</string>
     <string name="apart_search_item_available_dates">Январь 14–19</string>
-    <string name="apart_search_item_price_per_night">$1234 ночь</string>
+    <string name="apart_search_item_price_per_night">%1$d ночь</string>
     <string name="menu_page_search">Поиск</string>
     <string name="menu_page_wishlist">Вишлисты</string>
     <string name="menu_page_trips">Поездки</string>

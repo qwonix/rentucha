@@ -4,15 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.card.MaterialCardView
+import com.yandex.mapkit.MapKitFactory
+import com.yandex.mapkit.geometry.Point
+import com.yandex.mapkit.map.CameraPosition
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentMapBinding
+
 
 class MapFragment : Fragment(R.layout.fragment_map) {
     private lateinit var binding: FragmentMapBinding
@@ -29,6 +32,12 @@ class MapFragment : Fragment(R.layout.fragment_map) {
             viewModel = sharedSearchSettingsViewModel
             lifecycleOwner = viewLifecycleOwner
         }
+        // Перемещение камеры в центр Санкт-Петербурга.
+        binding.mapview.map.move(
+            CameraPosition(
+                Point(59.945933, 30.320045), 14.0f, 0.0f, 0.0f
+            )
+        );
 
         return binding.root
     }
@@ -38,8 +47,7 @@ class MapFragment : Fragment(R.layout.fragment_map) {
 
         val bottomNavigationView =
             view.rootView.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-        val containerBottomSheet = view.findViewById<FrameLayout>(R.id.containerBottomSheet)
-        val bottomSheetBehavior = BottomSheetBehavior.from(containerBottomSheet)
+        val bottomSheetBehavior = BottomSheetBehavior.from(binding.containerBottomSheet)
 
 //        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED;
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
@@ -49,6 +57,10 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         bottomSheetBehavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
+                if (newState == BottomSheetBehavior.STATE_EXPANDED)
+                    binding.mapview.map.isScrollGesturesEnabled = false
+                if (newState == BottomSheetBehavior.STATE_COLLAPSED)
+                    binding.mapview.map.isScrollGesturesEnabled = true
             }
 
             var bottomNavigationViewY: Float = -1F
@@ -70,5 +82,17 @@ class MapFragment : Fragment(R.layout.fragment_map) {
                 .yBy(bottomNavigationView.height.toFloat())
                 .setDuration(300).start()
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        binding.mapview.onStop();
+        MapKitFactory.getInstance().onStop();
+    }
+
+    override fun onStart() {
+        super.onStart()
+        binding.mapview.onStart();
+        MapKitFactory.getInstance().onStart();
     }
 }
