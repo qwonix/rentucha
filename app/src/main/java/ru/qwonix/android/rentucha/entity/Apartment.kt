@@ -15,8 +15,8 @@ data class Apartment(
 
 //     lateinit var images: List<Image>
 //     lateinit var amenities: List<Amenity>
-//    var latitude: Double,
-//    var longitude: Double
+    var latitude: Double,
+    var longitude: Double
 
 
 ) {

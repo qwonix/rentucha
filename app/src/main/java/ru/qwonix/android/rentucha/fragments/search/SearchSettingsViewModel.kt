@@ -27,12 +27,14 @@ class SearchSettingsViewModel : ViewModel() {
                 "Россия",
                 "Санкт-Петербург",
                 4234.21,
-                "https://i.imgur.com/8cUWZ9j.jpeg"
+                "https://i.imgur.com/8cUWZ9j.jpeg",
+                59.857229, 30.317933
             ), Apartment(
                 "Россия",
                 "Санкт-Петербург",
                 2342.54,
-                "https://i.imgur.com/udaZzAd.jpeg"
+                "https://i.imgur.com/udaZzAd.jpeg",
+                59.873549, 30.307972
             )
         )
     )

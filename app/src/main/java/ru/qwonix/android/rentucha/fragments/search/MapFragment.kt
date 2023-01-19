@@ -12,13 +12,22 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.yandex.mapkit.MapKitFactory
 import com.yandex.mapkit.geometry.Point
 import com.yandex.mapkit.map.CameraPosition
+import com.yandex.mapkit.map.MapObjectTapListener
+import com.yandex.mapkit.map.PlacemarkMapObject
+import com.yandex.runtime.ui_view.ViewProvider
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentMapBinding
+import ru.qwonix.android.rentucha.entity.Apartment
 
 
 class MapFragment : Fragment(R.layout.fragment_map) {
+
+    var placemarks: MutableList<PlacemarkMapObject> = ArrayList()
+    var placemarkTapListeners: MutableList<MapObjectTapListener> = ArrayList()
     private lateinit var binding: FragmentMapBinding
     private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
+
+    private lateinit var aprtmentMapMarker: View
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,13 +40,8 @@ class MapFragment : Fragment(R.layout.fragment_map) {
             viewModel = sharedSearchSettingsViewModel
             lifecycleOwner = viewLifecycleOwner
         }
-        // Перемещение камеры в центр Санкт-Петербурга.
-        binding.mapview.map.move(
-            CameraPosition(
-                Point(59.945933, 30.320045), 14.0f, 0.0f, 0.0f
-            )
-        );
 
+        aprtmentMapMarker = inflater.inflate(R.layout.placemark_map_apartament, null)
         return binding.root
     }
 
@@ -81,6 +85,34 @@ class MapFragment : Fragment(R.layout.fragment_map) {
                 .yBy(bottomNavigationView.height.toFloat())
                 .setDuration(300).start()
         }
+
+        // Перемещение камеры в центр Санкт-Петербурга.
+        binding.mapview.map.move(
+            CameraPosition(
+                Point(59.945933, 30.320045), 14.0f, 0.0f, 0.0f
+            )
+        )
+
+        for (apartment in sharedSearchSettingsViewModel.apartments.value!!) {
+            addApartmentToMap(apartment)
+        }
+    }
+
+    private fun addApartmentToMap(apartment: Apartment) {
+        val placemark = binding.mapview.map.mapObjects.addPlacemark(
+            Point(apartment.latitude, apartment.longitude), ViewProvider(aprtmentMapMarker)
+        )
+        placemark.userData = apartment
+
+        val placemarkTapListener = MapObjectTapListener { _, point ->
+            println(point.latitude)
+            println(point.longitude)
+            false
+        }
+        placemark.addTapListener(placemarkTapListener)
+        placemarkTapListeners.add(placemarkTapListener)
+        placemarks.add(placemark)
+
     }
 
     override fun onStop() {
