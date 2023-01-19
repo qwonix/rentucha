@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
-import com.google.android.material.card.MaterialCardView
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentSearchSettingsWhereExpandedBinding
 import ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel
@@ -35,7 +34,7 @@ class SearchSettingsWhereExpandedFragment :
         super.onViewCreated(view, savedInstanceState)
         sharedNavigationViewModel.whereNavController = view.findNavController()
 
-        view.findViewById<MaterialCardView>(R.id.where_expanded_search_bar)
+        binding.whereExpandedSearchBar
             .setOnClickListener {
                 view.findNavController()
                     .navigate(R.id.action_searchSettingsWhereExpandedFragment_to_searchFragment)

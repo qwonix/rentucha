@@ -9,7 +9,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.card.MaterialCardView
 import com.yandex.mapkit.MapKitFactory
 import com.yandex.mapkit.geometry.Point
 import com.yandex.mapkit.map.CameraPosition
@@ -75,7 +74,7 @@ class MapFragment : Fragment(R.layout.fragment_map) {
             }
         })
 
-        val searchBarCardView = view.findViewById<MaterialCardView>(R.id.search_bar)
+        val searchBarCardView = binding.searchBar
         searchBarCardView.setOnClickListener {
             findNavController().navigate(R.id.action_mapFragment_to_searchSettingsFragment)
             bottomNavigationView.animate()
