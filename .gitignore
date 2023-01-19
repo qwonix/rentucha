@@ -19,3 +19,4 @@ local.properties
 /gradle/wrapper/gradle-wrapper.jar
 /gradlew
 /gradlew.bat
+/apikey.properties

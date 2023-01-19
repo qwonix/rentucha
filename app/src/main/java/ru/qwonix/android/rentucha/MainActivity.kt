@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setupWithNavController(navController)
 
-        MapKitFactory.setApiKey(MAPKIT_API_KEY);
+        MapKitFactory.setApiKey(BuildConfig.YANDEX_MAPKIT_KEY);
         MapKitFactory.initialize(this);
     }
 }
