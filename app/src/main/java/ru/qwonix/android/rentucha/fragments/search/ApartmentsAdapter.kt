@@ -18,8 +18,7 @@ class ApartmentsAdapter(
     }
 
     override fun onBindViewHolder(holder: ApartmentViewHolder, position: Int) {
-        val largeNews = apartments[position]
-        holder.bind(largeNews)
+        holder.bind(apartments[position])
     }
 
     override fun getItemCount(): Int = apartments.size

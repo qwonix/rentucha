@@ -3,6 +3,7 @@ package ru.qwonix.android.rentucha.fragments.search
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import ru.qwonix.android.rentucha.entity.Apartment
 
 class SearchSettingsViewModel : ViewModel() {
     private val _searchQuery = MutableLiveData<String>()
@@ -19,6 +20,24 @@ class SearchSettingsViewModel : ViewModel() {
 
     private val _petsCount = MutableLiveData<Int>(0)
     val petsCount: LiveData<Int> = _petsCount
+
+    private val _apartments = MutableLiveData<List<Apartment>>(
+        listOf<Apartment>(
+            Apartment(
+                "Россия",
+                "Санкт-Петербург",
+                4234.21,
+                "https://i.imgur.com/8cUWZ9j.jpeg"
+            ), Apartment(
+                "Россия",
+                "Санкт-Петербург",
+                2342.54,
+                "https://i.imgur.com/udaZzAd.jpeg"
+            )
+        )
+    )
+    val apartments: LiveData<List<Apartment>> = _apartments
+
 
     fun addAdult() {
         _adultsCount.postValue(_adultsCount.value?.plus(1) ?: 0)
