@@ -9,7 +9,7 @@ class SearchSettingsViewModel : ViewModel() {
     private val _searchQuery = MutableLiveData<String>()
     val searchQuery: LiveData<String> = _searchQuery
 
-    val _adultsCount = MutableLiveData<Int>(0)
+    private val _adultsCount = MutableLiveData<Int>(0)
     val adultsCount: LiveData<Int> = _adultsCount
 
     private val _childrenCount = MutableLiveData<Int>(0)
