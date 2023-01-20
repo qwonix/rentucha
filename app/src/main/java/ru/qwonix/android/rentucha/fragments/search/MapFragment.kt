@@ -13,7 +13,6 @@ import com.yandex.mapkit.MapKitFactory
 import com.yandex.mapkit.geometry.Point
 import com.yandex.mapkit.map.CameraPosition
 import com.yandex.mapkit.map.MapObjectTapListener
-import com.yandex.mapkit.map.PlacemarkMapObject
 import com.yandex.runtime.ui_view.ViewProvider
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentMapBinding
@@ -22,7 +21,6 @@ import ru.qwonix.android.rentucha.entity.Apartment
 
 class MapFragment : Fragment(R.layout.fragment_map) {
 
-    var placemarks: MutableList<PlacemarkMapObject> = ArrayList()
     var placemarkTapListeners: MutableList<MapObjectTapListener> = ArrayList()
     private lateinit var binding: FragmentMapBinding
     private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
@@ -111,7 +109,6 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         }
         placemark.addTapListener(placemarkTapListener)
         placemarkTapListeners.add(placemarkTapListener)
-        placemarks.add(placemark)
 
     }
 
