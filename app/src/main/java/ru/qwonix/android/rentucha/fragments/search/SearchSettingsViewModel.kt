@@ -110,11 +110,4 @@ class SearchSettingsViewModel : ViewModel() {
     fun hasSearchQuery(): Boolean {
         return _searchQuery.value != null && _searchQuery.value?.isNotBlank() ?: false
     }
-
-    fun getSearchQueryOrElseEmptyStrings(): String {
-        return if (searchQuery.value == null)
-            ""
-        else searchQuery.value.toString()
-    }
-
 }
