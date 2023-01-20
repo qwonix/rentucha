@@ -41,4 +41,5 @@
     <string name="menu_page_trips">Trips</string>
     <string name="menu_page_indox">Indox</string>
     <string name="menu_page_login">Log In</string>
+    <string name="apartment_placemark_cost">$%.0f</string>
 </resources>

@@ -16,6 +16,7 @@ import com.yandex.mapkit.map.MapObjectTapListener
 import com.yandex.runtime.ui_view.ViewProvider
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentMapBinding
+import ru.qwonix.android.rentucha.databinding.PlacemarkMapApartamentBinding
 import ru.qwonix.android.rentucha.entity.Apartment
 
 
@@ -24,8 +25,6 @@ class MapFragment : Fragment(R.layout.fragment_map) {
     var placemarkTapListeners: MutableList<MapObjectTapListener> = ArrayList()
     private lateinit var binding: FragmentMapBinding
     private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
-
-    private lateinit var aprtmentMapMarker: View
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,7 +38,6 @@ class MapFragment : Fragment(R.layout.fragment_map) {
             lifecycleOwner = viewLifecycleOwner
         }
 
-        aprtmentMapMarker = inflater.inflate(R.layout.placemark_map_apartament, null)
         return binding.root
     }
 
@@ -97,15 +95,25 @@ class MapFragment : Fragment(R.layout.fragment_map) {
     }
 
     private fun addApartmentToMap(apartment: Apartment) {
-        val placemark = binding.mapview.map.mapObjects.addPlacemark(
-            Point(apartment.latitude, apartment.longitude), ViewProvider(aprtmentMapMarker)
-        )
-        placemark.userData = apartment
+        val placemarkMapApartamentBinding =
+            PlacemarkMapApartamentBinding.inflate(layoutInflater, null, true)
 
-        val placemarkTapListener = MapObjectTapListener { _, point ->
-            println(point.latitude)
-            println(point.longitude)
-            false
+        placemarkMapApartamentBinding.apartment = apartment
+        placemarkMapApartamentBinding.executePendingBindings()
+
+
+        val placemark = binding.mapview.map.mapObjects.addPlacemark(
+            Point(apartment.latitude, apartment.longitude),
+            ViewProvider(placemarkMapApartamentBinding.root)
+        )
+
+        val placemarkTapListener = MapObjectTapListener { mapObject, point ->
+            TODO("Not yet implemented")
+        }
+
+        placemark.apply {
+            userData = apartment
+            addTapListener(placemarkTapListener)
         }
         placemark.addTapListener(placemarkTapListener)
         placemarkTapListeners.add(placemarkTapListener)

@@ -41,4 +41,5 @@
     <string name="menu_page_trips">Поездки</string>
     <string name="menu_page_indox">Входящие</string>
     <string name="menu_page_login">Вход</string>
+    <string name="apartment_placemark_cost">$%.0f</string>
 </resources>
