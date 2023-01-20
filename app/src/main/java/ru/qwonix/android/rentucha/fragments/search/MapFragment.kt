@@ -16,7 +16,7 @@ import com.yandex.mapkit.map.MapObjectTapListener
 import com.yandex.runtime.ui_view.ViewProvider
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentMapBinding
-import ru.qwonix.android.rentucha.databinding.PlacemarkMapApartamentBinding
+import ru.qwonix.android.rentucha.databinding.PlacemarkMapApartmentBinding
 import ru.qwonix.android.rentucha.entity.Apartment
 
 
@@ -95,16 +95,16 @@ class MapFragment : Fragment(R.layout.fragment_map) {
     }
 
     private fun addApartmentToMap(apartment: Apartment) {
-        val placemarkMapApartamentBinding =
-            PlacemarkMapApartamentBinding.inflate(layoutInflater, null, true)
+        val placemarkMapApartmentBinding =
+            PlacemarkMapApartmentBinding.inflate(layoutInflater, null, true)
 
-        placemarkMapApartamentBinding.apartment = apartment
-        placemarkMapApartamentBinding.executePendingBindings()
+        placemarkMapApartmentBinding.apartment = apartment
+        placemarkMapApartmentBinding.executePendingBindings()
 
 
         val placemark = binding.mapview.map.mapObjects.addPlacemark(
             Point(apartment.latitude, apartment.longitude),
-            ViewProvider(placemarkMapApartamentBinding.root)
+            ViewProvider(placemarkMapApartmentBinding.root)
         )
 
         val placemarkTapListener = MapObjectTapListener { mapObject, point ->
