@@ -9,7 +9,7 @@ class SearchSettingsViewModel : ViewModel() {
     private val _searchQuery = MutableLiveData<String>()
     val searchQuery: LiveData<String> = _searchQuery
 
-    private val _adultsCount = MutableLiveData<Int>(0)
+    val _adultsCount = MutableLiveData<Int>(0)
     val adultsCount: LiveData<Int> = _adultsCount
 
     private val _childrenCount = MutableLiveData<Int>(0)
@@ -45,35 +45,35 @@ class SearchSettingsViewModel : ViewModel() {
     }
 
     fun addAdult() {
-        _adultsCount.postValue(_adultsCount.value?.plus(1) ?: 0)
+        _adultsCount.postValue(_adultsCount.value?.inc() ?: 0)
     }
 
     fun addChild() {
-        _childrenCount.postValue(_childrenCount.value?.plus(1) ?: 0)
+        _childrenCount.postValue(_childrenCount.value?.inc() ?: 0)
     }
 
     fun addInfant() {
-        _infantsCount.postValue(_infantsCount.value?.plus(1) ?: 0)
+        _infantsCount.postValue(_infantsCount.value?.inc() ?: 0)
     }
 
     fun addPet() {
-        _petsCount.postValue(_petsCount.value?.plus(1) ?: 0)
+        _petsCount.postValue(_petsCount.value?.inc() ?: 0)
     }
 
     fun removeAdult() {
-        _adultsCount.postValue(_adultsCount.value?.minus(1) ?: 0)
+        _adultsCount.postValue(_adultsCount.value?.dec() ?: 0)
     }
 
     fun removeChild() {
-        _childrenCount.postValue(_childrenCount.value?.minus(1) ?: 0)
+        _childrenCount.postValue(_childrenCount.value?.dec() ?: 0)
     }
 
     fun removeInfant() {
-        _infantsCount.postValue(_infantsCount.value?.minus(1) ?: 0)
+        _infantsCount.postValue(_infantsCount.value?.dec() ?: 0)
     }
 
     fun removePet() {
-        _petsCount.postValue(_petsCount.value?.minus(1) ?: 0)
+        _petsCount.postValue(_petsCount.value?.dec() ?: 0)
     }
 
     fun clearSettings() {
