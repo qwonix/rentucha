@@ -20,6 +20,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "YANDEX_MAPKIT_KEY", apikeyProperties['YANDEX_MAPKIT_KEY'])
+        buildConfigField("String", "RENTUCHA_API", apikeyProperties['RENTUCHA_API'])
     }
 
     buildTypes {
@@ -42,6 +43,9 @@ android {
 }
 
 dependencies {
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
     implementation 'com.squareup.picasso:picasso:2.8'
     implementation 'com.yandex.android:maps.mobile:4.2.2-lite'
 
