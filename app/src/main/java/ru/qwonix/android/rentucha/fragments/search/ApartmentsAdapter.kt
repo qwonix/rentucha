@@ -6,9 +6,14 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.qwonix.android.rentucha.databinding.ItemSearchApartmentBinding
 import ru.qwonix.android.rentucha.entity.Apartment
 
-class ApartmentsAdapter(
-    private val apartments: List<Apartment>
-) : RecyclerView.Adapter<ApartmentsAdapter.ApartmentViewHolder>() {
+class ApartmentsAdapter : RecyclerView.Adapter<ApartmentsAdapter.ApartmentViewHolder>() {
+
+    var apartments = listOf<Apartment>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
+
     private lateinit var binding: ItemSearchApartmentBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ApartmentViewHolder {
