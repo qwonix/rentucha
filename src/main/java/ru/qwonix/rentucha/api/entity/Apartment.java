@@ -26,14 +26,17 @@ public class Apartment {
     @Column(nullable = false)
     private String cityName;
 
-    @Column
-    private String localeName;
-
     @Column(nullable = false)
     private Double pricePerNight;
 
     @Column(nullable = false)
-    private Double personCount;
+    private Double maxPersonCount;
+
+    @Column(nullable = false)
+    private Double latitude;
+
+    @Column(nullable = false)
+    private Double longitude;
 
     @OneToMany
     @JoinTable(
@@ -50,9 +53,6 @@ public class Apartment {
             inverseJoinColumns = {@JoinColumn(name = "amenity_id", referencedColumnName = "id")}
     )
     private List<Amenity> amenities;
-
-    private Double latitude;
-    private Double longitude;
 
     @CreationTimestamp
     @Column(updatable = false)
