@@ -13,6 +13,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipChildren="false"
         android:orientation="vertical"
         tools:context=".fragments.search.MapFragment">
 
@@ -20,7 +21,17 @@
             android:id="@+id/mapview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/gray_900" />
+            android:background="@drawable/ic_launcher_background" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/popup_map_fragment_container"
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="100dp"
+            android:clipChildren="false"
+            tools:layout="@layout/popup_map_apartment" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/containerBottomSheet"

@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="gray_900">#222222</color>
+    <color name="gray_900_op50">#80222222</color>
     <color name="gray_700">#717171</color>
     <color name="gray_500">#BEBEBE</color>
     <color name="gray_300">#E3E3E3</color>

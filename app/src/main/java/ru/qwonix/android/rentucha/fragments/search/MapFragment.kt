@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -92,6 +93,14 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         for (apartment in sharedSearchSettingsViewModel.apartments.value!!) {
             addApartmentToMap(apartment)
         }
+
+        parentFragmentManager.commit {
+            replace(
+                R.id.popup_map_fragment_container,
+                PopupMapApartment(sharedSearchSettingsViewModel.apartments.value!![1])
+            )
+        }
+
     }
 
     private fun addApartmentToMap(apartment: Apartment) {
@@ -108,7 +117,13 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         )
 
         val placemarkTapListener = MapObjectTapListener { mapObject, point ->
-            TODO("Not yet implemented")
+            parentFragmentManager.commit {
+                replace(
+                    R.id.popup_map_fragment_container,
+                    PopupMapApartment(apartment)
+                )
+            }
+            false
         }
 
         placemark.apply {

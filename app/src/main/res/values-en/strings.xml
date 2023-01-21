@@ -33,7 +33,7 @@
     <string name="who_settings_expanded_infants_count">0</string>
     <string name="who_settings_expanded_pets_count">0</string>
     <string name="apart_search_item_available_dates">Jan 14–19</string>
-    <string name="apart_search_item_price_per_night">$1234 night</string>
+    <string name="apart_search_item_price_per_night">$%.0f night</string>
     <string name="apart_search_item_location">Saratov, Russia</string>
     <string name="apart_search_item_date">Add 3 weeks ago</string>
     <string name="menu_page_search">Search</string>
