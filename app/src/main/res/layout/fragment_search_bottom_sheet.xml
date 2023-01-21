@@ -45,9 +45,10 @@
             android:id="@+id/recycler_search_apartments"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
             android:background="@color/white"
-            android:padding="15dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_search_apartment"
             tools:orientation="vertical" />
