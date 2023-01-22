@@ -7,17 +7,16 @@ data class Apartment(
 //    var description: String,
     var countryName: String,
     var cityName: String,
-//    var localeName: String,
-    var pricePerDay: Double,
-//    var personCount: Double,
-//    var creationTimestamp: LocalDateTime,
+    var pricePerNight: Double,
     var mainImageUrl: String,
+    var maxPersonCount: Double,
 
-//     lateinit var images: List<Image>
-//     lateinit var amenities: List<Amenity>
+
     var latitude: Double,
-    var longitude: Double
+    var longitude: Double,
 
+//    var creationTimestamp: LocalDateTime,
+//    var images: List<String>,
 
 ) {
 

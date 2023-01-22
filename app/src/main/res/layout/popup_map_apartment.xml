@@ -90,7 +90,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{@string/apart_search_item_price_per_night(apartment.pricePerDay)}"
+                        android:text="@{@string/apart_search_item_price_per_night(apartment.pricePerNight)}"
                         android:textColor="@color/gray_900"
                         tools:text="@string/apart_search_item_price_per_night" />
                 </LinearLayout>
