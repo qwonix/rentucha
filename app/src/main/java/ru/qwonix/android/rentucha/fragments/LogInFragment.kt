@@ -1,10 +1,10 @@
 package ru.qwonix.android.rentucha.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import ru.qwonix.android.rentucha.R
 
 // TODO: Rename parameter arguments, choose names that match

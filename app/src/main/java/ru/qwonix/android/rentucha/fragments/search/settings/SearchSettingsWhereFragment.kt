@@ -30,7 +30,6 @@ class SearchSettingsWhereFragment : Fragment(R.layout.fragment_search_settings_w
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.cardWhereSearchSetting.setOnClickListener {
             sharedNavigationViewModel.whereNavController
                 .navigate(R.id.action_searchSettingsWhereFragment_to_searchSettingsWhereExpandedFragment)

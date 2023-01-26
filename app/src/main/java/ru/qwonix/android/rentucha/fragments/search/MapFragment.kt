@@ -23,7 +23,7 @@ import ru.qwonix.android.rentucha.entity.Apartment
 
 class MapFragment : Fragment(R.layout.fragment_map) {
 
-    var placemarkTapListeners: MutableList<MapObjectTapListener> = ArrayList()
+    private var placemarkTapListeners: MutableList<MapObjectTapListener> = ArrayList()
     private lateinit var binding: FragmentMapBinding
     private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
 
@@ -46,8 +46,8 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         super.onViewCreated(view, savedInstanceState)
 
         val bottomNavigationView =
-            view.rootView.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-        val bottomSheetBehavior = BottomSheetBehavior.from(binding.containerBottomSheet)
+            view.rootView.findViewById<BottomNavigationView>(R.id.bottom_navigation_view_main)
+        val bottomSheetBehavior = BottomSheetBehavior.from(binding.containerBottomSheetMain)
 
 //        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED;
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
@@ -58,9 +58,9 @@ class MapFragment : Fragment(R.layout.fragment_map) {
             BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 if (newState == BottomSheetBehavior.STATE_EXPANDED)
-                    binding.mapview.map.isScrollGesturesEnabled = false
+                    binding.mapviewMain.map.isScrollGesturesEnabled = false
                 if (newState == BottomSheetBehavior.STATE_COLLAPSED)
-                    binding.mapview.map.isScrollGesturesEnabled = true
+                    binding.mapviewMain.map.isScrollGesturesEnabled = true
             }
 
             var bottomNavigationViewY: Float = -1F
@@ -84,7 +84,7 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         }
 
         // Перемещение камеры в центр Санкт-Петербурга.
-        binding.mapview.map.move(
+        binding.mapviewMain.map.move(
             CameraPosition(
                 Point(59.945933, 30.320045), 14.0f, 0.0f, 0.0f
             )
@@ -100,7 +100,10 @@ class MapFragment : Fragment(R.layout.fragment_map) {
                 PopupMapApartment(sharedSearchSettingsViewModel.apartments.value!![1])
             )
         }
+    }
 
+    private fun addApartmentsToMap(apartments: List<Apartment>) {
+        apartments.forEach { addApartmentToMap(it) }
     }
 
     private fun addApartmentToMap(apartment: Apartment) {
@@ -111,12 +114,12 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         placemarkMapApartmentBinding.executePendingBindings()
 
 
-        val placemark = binding.mapview.map.mapObjects.addPlacemark(
+        val placemark = binding.mapviewMain.map.mapObjects.addPlacemark(
             Point(apartment.latitude, apartment.longitude),
             ViewProvider(placemarkMapApartmentBinding.root)
         )
 
-        val placemarkTapListener = MapObjectTapListener { mapObject, point ->
+        val placemarkTapListener = MapObjectTapListener { _, _ ->
             parentFragmentManager.commit {
                 replace(
                     R.id.popup_map_fragment_container,
@@ -137,13 +140,13 @@ class MapFragment : Fragment(R.layout.fragment_map) {
 
     override fun onStop() {
         super.onStop()
-        binding.mapview.onStop();
-        MapKitFactory.getInstance().onStop();
+        binding.mapviewMain.onStop()
+        MapKitFactory.getInstance().onStop()
     }
 
     override fun onStart() {
         super.onStart()
-        binding.mapview.onStart();
-        MapKitFactory.getInstance().onStart();
+        binding.mapviewMain.onStart()
+        MapKitFactory.getInstance().onStart()
     }
 }

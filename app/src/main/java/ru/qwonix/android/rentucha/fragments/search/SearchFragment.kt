@@ -40,6 +40,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         binding.editTextSearchQuery.onSearch {
             sharedSearchSettingsViewModel.setSearchQuery(binding.editTextSearchQuery.text.toString())
 
+            // FIXME: replace with transparent layout
             view.findNavController()
                 .navigate(R.id.action_searchFragment_to_searchSettingsWhereExpandedFragment)
         }

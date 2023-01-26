@@ -9,18 +9,11 @@ data class Apartment(
     var cityName: String,
     var pricePerNight: Double,
     var mainImageUrl: String,
-    var maxPersonCount: Double,
-
-
+    var maxPersonCount: Int,
     var latitude: Double,
     var longitude: Double,
 
 //    var creationTimestamp: LocalDateTime,
 //    var images: List<String>,
 
-) {
-
-    fun getLocation(): String {
-        return "$countryName $cityName"
-    }
-}
+)

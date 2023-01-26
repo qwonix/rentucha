@@ -15,7 +15,7 @@
         style="@style/MaterialCardView.SearchSettings"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        app:contentPadding="24dp"
+        app:contentPadding="25dp"
         tools:context=".fragments.search.settings.SearchSettingsWhoFragment">
 
         <TextView

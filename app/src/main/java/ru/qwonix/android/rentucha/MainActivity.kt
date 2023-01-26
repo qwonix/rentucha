@@ -14,13 +14,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.mainFragmentContainer) as NavHostFragment
+            supportFragmentManager.findFragmentById(R.id.fragment_container_main) as NavHostFragment
         val navController = navHostFragment.navController
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        val bottomNavigationView =
+            findViewById<BottomNavigationView>(R.id.bottom_navigation_view_main)
 
         bottomNavigationView.setupWithNavController(navController)
 
-        MapKitFactory.setApiKey(BuildConfig.YANDEX_MAPKIT_KEY);
-        MapKitFactory.initialize(this);
+        MapKitFactory.setApiKey(BuildConfig.YANDEX_MAPKIT_KEY)
+        MapKitFactory.initialize(this)
     }
 }

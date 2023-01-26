@@ -15,12 +15,12 @@
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/file</item>
     </style>
 
-    <style name="MaterialCardView.Corners" parent="@style/Widget.MaterialComponents.CardView">
+    <style name="MaterialCardView.Cleared.TopRoundedCorners30" parent="">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut
         </item>
     </style>
 
-    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="">
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="MaterialCardView.Cleared">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">30dp</item>
         <item name="cornerSizeTopRight">30dp</item>

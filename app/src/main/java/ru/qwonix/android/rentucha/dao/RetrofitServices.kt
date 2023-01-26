@@ -8,4 +8,7 @@ import ru.qwonix.android.rentucha.entity.Apartment
 interface RetrofitServices {
     @GET("apartments")
     fun findAll(): Call<MutableList<Apartment>>
+
+    @GET("apartments")
+    fun findAllByName(@Query("query") query: String): Call<MutableList<Apartment>>
 }

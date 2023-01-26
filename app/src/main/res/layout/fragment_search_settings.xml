@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipChildren="false"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".fragments.search.settings.SearchSettingsFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -45,7 +46,7 @@
         android:orientation="vertical">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/search_settings_where_fragment_container"
+            android:id="@+id/fragment_container_search_settings_where"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,7 +56,7 @@
             app:navGraph="@navigation/navigation_search_settings_where" />
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/search_settings_when_fragment_container"
+            android:id="@+id/fragment_container_search_settings_when"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,7 +67,7 @@
             app:navGraph="@navigation/navigation_search_settings_when" />
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/search_settings_who_fragment_container"
+            android:id="@+id/fragment_container_search_settings_who"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,13 +80,13 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1" />
 
     <com.google.android.material.card.MaterialCardView
+        style="@style/MaterialCardView.Cleared"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_weight="0">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="wrap_content"
@@ -99,13 +100,14 @@
             android:layout_marginStart="20dp"
             android:text="@string/search_settings_clear"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_search_settings_search"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_gravity="end|center_vertical"
+            android:layout_marginVertical="10dp"
             android:layout_marginEnd="25dp"
             android:backgroundTint="#d23754"
             android:text="@string/search_settings_search"

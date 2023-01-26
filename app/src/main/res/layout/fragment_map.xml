@@ -18,7 +18,7 @@
         tools:context=".fragments.search.MapFragment">
 
         <com.yandex.mapkit.mapview.MapView
-            android:id="@+id/mapview"
+            android:id="@+id/mapview_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/ic_launcher_background" />
@@ -34,7 +34,7 @@
             tools:layout="@layout/popup_map_apartment" />
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/containerBottomSheet"
+            android:id="@+id/container_bottom_sheet_main"
             android:name="ru.qwonix.android.rentucha.fragments.search.BottomSearchSheetFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -42,7 +42,6 @@
             app:behavior_peekHeight="80dp"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
             tools:layout="@layout/fragment_search_bottom_sheet" />
-
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/search_bar"
@@ -95,7 +94,7 @@
             </LinearLayout>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/search_bar_filters"
+                android:id="@+id/button_search_bar_filters"
                 style="@style/MaterialCardView.ImageIconButton"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -108,8 +107,6 @@
                     android:layout_margin="5dp"
                     android:src="@drawable/ic_baseline_tune_24" />
             </com.google.android.material.card.MaterialCardView>
-
-
         </com.google.android.material.card.MaterialCardView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">rentucha</string>
     <string name="search_bar_where_to">Куда?</string>
     <string name="search_settings_clear"><u>Очистить</u></string>
     <string name="search_settings_search">Искать</string>
@@ -31,7 +30,7 @@
     <string name="who_settings_expanded_pets_description">ссылка</string>
     <string name="who_settings_expanded_pets_count">0</string>
     <string name="apart_search_item_date">Добавлено 3 недели назад</string>
-    <string name="apart_search_item_location">Саратов, Россия</string>
+    <string name="apart_search_item_location">%1$s, %2$s</string>
     <string name="apart_search_item_available_dates">Январь 14–19</string>
     <string name="apart_search_item_price_per_night"><b>$%.0f</b> ночь</string>
     <string name="search_settings_stays">Места</string>
@@ -42,4 +41,5 @@
     <string name="menu_page_indox">Входящие</string>
     <string name="menu_page_login">Вход</string>
     <string name="apartment_placemark_cost">$%.0f</string>
+    <string name="search_destinations">Поиск направлений</string>
 </resources>

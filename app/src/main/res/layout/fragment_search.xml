@@ -35,7 +35,7 @@
                 app:boxCornerRadiusTopStart="15dp"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
-                app:endIconDrawable="@drawable/file"
+                app:endIconDrawable="@drawable/ic_baseline_close_24"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/gray_900"
                 app:startIconDrawable="@drawable/ic_baseline_search_24"
@@ -51,7 +51,7 @@
                     android:paddingTop="10dp"
                     android:text="@{viewModel.searchQuery}"
                     android:textColorHint="@color/gray_700"
-                    tools:hint="Search destinations" />
+                    tools:hint="@string/search_destinations" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

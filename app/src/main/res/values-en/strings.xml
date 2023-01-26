@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">rentucha</string>
     <string name="search_bar_where_to">Where to?</string>
     <string name="search_settings_stays">Stays</string>
     <string name="when_settings_next">Next</string>
@@ -34,7 +33,7 @@
     <string name="who_settings_expanded_pets_count">0</string>
     <string name="apart_search_item_available_dates">Jan 14–19</string>
     <string name="apart_search_item_price_per_night"><b>$%.0f</b> night</string>
-    <string name="apart_search_item_location">Saratov, Russia</string>
+    <string name="apart_search_item_location">%1$s, %2$s</string>
     <string name="apart_search_item_date">Add 3 weeks ago</string>
     <string name="menu_page_search">Search</string>
     <string name="menu_page_wishlist">Wishlist</string>
@@ -42,4 +41,5 @@
     <string name="menu_page_indox">Indox</string>
     <string name="menu_page_login">Log In</string>
     <string name="apartment_placemark_cost">$%.0f</string>
+    <string name="search_destinations">Search destinations</string>
 </resources>

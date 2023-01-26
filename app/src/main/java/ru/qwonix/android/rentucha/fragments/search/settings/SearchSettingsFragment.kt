@@ -14,7 +14,6 @@ import ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel
 import ru.qwonix.android.rentucha.viewmodel.NavigationViewModel
 
 class SearchSettingsFragment : Fragment(R.layout.fragment_search_settings) {
-
     lateinit var binding: FragmentSearchSettingsBinding
     private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
     private val sharedNavigationViewModel: NavigationViewModel by activityViewModels()
@@ -44,7 +43,7 @@ class SearchSettingsFragment : Fragment(R.layout.fragment_search_settings) {
         val closeSearchSettings: (v: View) -> Unit = {
             findNavController().navigate(R.id.action_searchSettingsFragment_to_mapFragment)
             val bottomNavigationView =
-                view.rootView.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+                view.rootView.findViewById<BottomNavigationView>(R.id.bottom_navigation_view_main)
             bottomNavigationView.animate()
                 .yBy(-bottomNavigationView.height.toFloat())
                 .setDuration(300).start()

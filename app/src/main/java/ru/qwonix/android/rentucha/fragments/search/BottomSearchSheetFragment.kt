@@ -39,6 +39,7 @@ class BottomSearchSheetFragment : Fragment(R.layout.fragment_search_bottom_sheet
         binding.recyclerSearchApartments.apply {
             adapter = apartmentsAdapter
             layoutManager = LinearLayoutManager(context)
+
             addItemDecoration(object : RecyclerView.ItemDecoration() {
                 override fun getItemOffsets(
                     outRect: Rect,

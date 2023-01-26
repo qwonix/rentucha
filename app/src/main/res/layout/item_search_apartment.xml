@@ -28,7 +28,6 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
-                    android:id="@+id/imageSlider"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:scaleType="centerCrop"
@@ -53,7 +52,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{apartment.location}"
+                    android:text="@{@string/apart_search_item_location(apartment.countryName, apartment.cityName)}"
                     android:textColor="@color/gray_900"
                     tools:text="@string/apart_search_item_location" />
 
@@ -61,13 +60,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:text="@string/apart_search_item_date"
+                    tools:text="@string/apart_search_item_date"
                     android:textColor="@color/gray_700" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/apart_search_item_available_dates"
+                    tools:text="@string/apart_search_item_available_dates"
                     android:textColor="@color/gray_700" />
 
                 <TextView

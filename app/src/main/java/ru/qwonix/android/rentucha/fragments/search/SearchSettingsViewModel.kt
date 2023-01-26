@@ -3,6 +3,10 @@ package ru.qwonix.android.rentucha.fragments.search
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import ru.qwonix.android.rentucha.dao.RetrofitService
 import ru.qwonix.android.rentucha.entity.Apartment
 
 class SearchSettingsViewModel : ViewModel() {
@@ -28,21 +32,56 @@ class SearchSettingsViewModel : ViewModel() {
                 "Санкт-Петербург",
                 4234.21,
                 "https://i.imgur.com/8cUWZ9j.jpeg",
+                4,
                 59.857229, 30.317933
             ), Apartment(
                 "Россия",
                 "Санкт-Петербург",
                 2342.54,
                 "https://i.imgur.com/udaZzAd.jpeg",
+                5,
                 59.873549, 30.307972
             )
         )
     )
     val apartments: LiveData<List<Apartment>> = _apartments
+    val apartmentsCount: LiveData<Int> = MutableLiveData<Int>(_apartments.value?.size ?: 0)
 
-    fun getApartmentsCount(): Int {
-        return _apartments.value?.size ?: 0
+    fun requestApartments() {
+        val call: Call<MutableList<Apartment>> = RetrofitService.retrofitService.findAll()
+        call.enqueue(object : Callback<MutableList<Apartment>?> {
+            override fun onResponse(
+                call: Call<MutableList<Apartment>?>,
+                response: Response<MutableList<Apartment>?>
+            ) {
+                response.body()?.forEach { println(it) }
+                _apartments.postValue(response.body())
+            }
+
+            override fun onFailure(call: Call<MutableList<Apartment>?>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
     }
+
+    fun requestApartmentsByName(name: String) {
+        val call: Call<MutableList<Apartment>> = RetrofitService.retrofitService.findAllByName(name)
+        call.enqueue(object : Callback<MutableList<Apartment>?> {
+            override fun onResponse(
+                call: Call<MutableList<Apartment>?>,
+                response: Response<MutableList<Apartment>?>
+            ) {
+                println("requestApartmentsByName")
+                response.body()?.forEach { println(it) }
+                _apartments.postValue(response.body())
+            }
+
+            override fun onFailure(call: Call<MutableList<Apartment>?>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
 
     fun addAdult() {
         _adultsCount.postValue(_adultsCount.value?.inc() ?: 0)
@@ -100,10 +139,10 @@ class SearchSettingsViewModel : ViewModel() {
             _infantsCount.value,
             _petsCount.value
         )
-        var sum = 0;
+        var sum = 0
         guestsCount.forEach { if (it != null) sum += it }
 
-        return sum;
+        return sum
     }
 
 

@@ -59,7 +59,6 @@
                     android:textColor="@color/gray_900"
                     tools:text="@string/where_settings_search_destinations" />
 
-
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

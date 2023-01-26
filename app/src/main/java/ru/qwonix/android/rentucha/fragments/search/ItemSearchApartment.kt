@@ -28,7 +28,7 @@ class ItemSearchApartment : Fragment(R.layout.item_search_apartment) {
         @JvmStatic
         @BindingAdapter("imageUrl")
         fun loadImage(view: ImageView, imageUrl: String?) {
-            Picasso.get().load(imageUrl).into(view);
+            Picasso.get().load(imageUrl).into(view)
         }
     }
 
