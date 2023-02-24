@@ -9,8 +9,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentSearchSettingsWhoBinding
-import ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel
 import ru.qwonix.android.rentucha.viewmodel.NavigationViewModel
+import ru.qwonix.android.rentucha.viewmodel.SearchSettingsViewModel
 
 class SearchSettingsWhoFragment : Fragment(R.layout.fragment_search_settings_who) {
     private lateinit var binding: FragmentSearchSettingsWhoBinding

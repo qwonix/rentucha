@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel" />
+            type="ru.qwonix.android.rentucha.viewmodel.SearchSettingsViewModel" />
     </data>
 
     <LinearLayout

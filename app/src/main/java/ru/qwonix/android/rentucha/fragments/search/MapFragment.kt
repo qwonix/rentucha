@@ -19,6 +19,7 @@ import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentMapBinding
 import ru.qwonix.android.rentucha.databinding.PlacemarkMapApartmentBinding
 import ru.qwonix.android.rentucha.entity.Apartment
+import ru.qwonix.android.rentucha.viewmodel.SearchSettingsViewModel
 
 
 class MapFragment : Fragment(R.layout.fragment_map) {

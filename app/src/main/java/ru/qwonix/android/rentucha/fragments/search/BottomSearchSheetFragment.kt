@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentSearchBottomSheetBinding
+import ru.qwonix.android.rentucha.viewmodel.SearchSettingsViewModel
 
 
 class BottomSearchSheetFragment : Fragment(R.layout.fragment_search_bottom_sheet) {

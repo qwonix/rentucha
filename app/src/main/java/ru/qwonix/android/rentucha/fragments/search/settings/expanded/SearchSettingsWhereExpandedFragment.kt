@@ -9,8 +9,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentSearchSettingsWhereExpandedBinding
-import ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel
 import ru.qwonix.android.rentucha.viewmodel.NavigationViewModel
+import ru.qwonix.android.rentucha.viewmodel.SearchSettingsViewModel
 
 class SearchSettingsWhereExpandedFragment :
     Fragment(R.layout.fragment_search_settings_where_expanded) {

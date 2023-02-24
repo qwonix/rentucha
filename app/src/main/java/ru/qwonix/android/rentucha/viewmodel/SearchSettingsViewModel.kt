@@ -1,4 +1,4 @@
-package ru.qwonix.android.rentucha.fragments.search
+package ru.qwonix.android.rentucha.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

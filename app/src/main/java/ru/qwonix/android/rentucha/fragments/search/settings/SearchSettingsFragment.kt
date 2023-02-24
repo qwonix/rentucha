@@ -10,8 +10,8 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentSearchSettingsBinding
-import ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel
 import ru.qwonix.android.rentucha.viewmodel.NavigationViewModel
+import ru.qwonix.android.rentucha.viewmodel.SearchSettingsViewModel
 
 class SearchSettingsFragment : Fragment(R.layout.fragment_search_settings) {
     lateinit var binding: FragmentSearchSettingsBinding

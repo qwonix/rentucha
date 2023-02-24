@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import ru.qwonix.android.rentucha.R
 import ru.qwonix.android.rentucha.databinding.FragmentSearchSettingsWhereBinding
-import ru.qwonix.android.rentucha.fragments.search.SearchSettingsViewModel
 import ru.qwonix.android.rentucha.viewmodel.NavigationViewModel
+import ru.qwonix.android.rentucha.viewmodel.SearchSettingsViewModel
 
 class SearchSettingsWhereFragment : Fragment(R.layout.fragment_search_settings_where) {
     private lateinit var binding: FragmentSearchSettingsWhereBinding
