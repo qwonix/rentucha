@@ -53,8 +53,9 @@
             app:cardElevation="8dp"
             app:contentPadding="5dp">
 
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 android:gravity="center_vertical"
@@ -66,47 +67,85 @@
                     android:src="@drawable/ic_baseline_search_24" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp">
 
-                    <!-- fixme: no ellipsize -->
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="top"
+                        android:ellipsize="end"
                         android:maxLines="1"
                         android:text="@{viewModel.hasSearchQuery() ? viewModel.searchQuery : @string/search_bar_where_to}"
                         android:textColor="@color/gray_900"
                         android:textSize="16sp"
                         tools:text="@string/search_bar_where_to" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{viewModel.getSearchBarSettingsDescriptionText()}"
-                        android:textColor="@color/gray_500"
-                        android:textSize="12sp"
-                        tools:text="@string/search_bar_settings_description" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:text='@{viewModel.hasSearchQuery() ? "" : @string/search_bar_where_settings_description}'
+                            android:textColor="@color/gray_500"
+                            android:textSize="12sp"
+                            tools:text="@string/search_bar_where_settings_description" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" · " />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:text="@{@string/search_bar_when_settings_description}"
+                            android:textColor="@color/gray_500"
+                            android:textSize="12sp"
+                            tools:text="@string/search_bar_when_settings_description" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" · " />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:text="@{viewModel.guestsCount == 0 ? @string/search_bar_who_settings_description : @string/who_settings_description(viewModel.guestsCount)}"
+                            android:textColor="@color/gray_500"
+                            android:textSize="12sp"
+                            tools:text="@string/search_bar_who_settings_description" />
+                    </LinearLayout>
+
+
                 </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/button_search_bar_filters"
+                    style="@style/MaterialCardView.ImageIconButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="20dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/ic_baseline_tune_24" />
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/button_search_bar_filters"
-                style="@style/MaterialCardView.ImageIconButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="20dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/ic_baseline_tune_24" />
-            </com.google.android.material.card.MaterialCardView>
         </com.google.android.material.card.MaterialCardView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

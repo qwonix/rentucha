@@ -2,7 +2,9 @@
     <string name="app_name" translatable="false">Rentucha</string>
 
     <string name="search_bar_where_to">Куда?</string>
-    <string name="search_bar_settings_description">Anywhere · Any week · Add guests</string>
+    <string name="search_bar_where_settings_description">Anywhere</string>
+    <string name="search_bar_when_settings_description">Any week</string>
+    <string name="search_bar_who_settings_description">Add guests</string>
     <string name="apartments_count">apartments: %1$d</string>
     <string name="search_settings_clear"><u>Очистить</u></string>
     <string name="search_settings_search">Искать</string>

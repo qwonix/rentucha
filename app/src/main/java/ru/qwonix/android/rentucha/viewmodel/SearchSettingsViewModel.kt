@@ -61,6 +61,27 @@ class SearchSettingsViewModel : ViewModel() {
             })
     }
 
+    fun setSearchQuery(searchQuery: String) {
+        _searchQuery.postValue(searchQuery)
+    }
+
+    fun getGuestsCount(): Int {
+        val guestsCount = listOf(
+            _adultsCount.value,
+            _childrenCount.value,
+            _infantsCount.value,
+            _petsCount.value
+        )
+        var sum = 0
+        guestsCount.forEach { if (it != null) sum += it }
+
+        return sum
+    }
+
+
+    fun hasSearchQuery(): Boolean {
+        return _searchQuery.value != null && _searchQuery.value?.isNotBlank() ?: false
+    }
 
     fun addAdult() {
         _adultsCount.postValue(_adultsCount.value?.inc() ?: 0)
@@ -101,31 +122,5 @@ class SearchSettingsViewModel : ViewModel() {
         _childrenCount.postValue(0)
         _infantsCount.postValue(0)
         _petsCount.postValue(0)
-    }
-
-    fun setSearchQuery(searchQuery: String) {
-        _searchQuery.postValue(searchQuery)
-    }
-
-    fun getSearchBarSettingsDescriptionText(): String {
-        return getGuestsCount().toString() + " guests"
-    }
-
-    fun getGuestsCount(): Int {
-        val guestsCount = listOf(
-            _adultsCount.value,
-            _childrenCount.value,
-            _infantsCount.value,
-            _petsCount.value
-        )
-        var sum = 0
-        guestsCount.forEach { if (it != null) sum += it }
-
-        return sum
-    }
-
-
-    fun hasSearchQuery(): Boolean {
-        return _searchQuery.value != null && _searchQuery.value?.isNotBlank() ?: false
     }
 }

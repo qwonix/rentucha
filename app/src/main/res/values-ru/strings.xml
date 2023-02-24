@@ -14,7 +14,6 @@
     <string name="who_settings">Кто</string>
     <string name="who_settings_default">Добавить гостей</string>
     <string name="who_settings_expanded">Кто?</string>
-    <string name="search_bar_settings_description">Anywhere · Any week · Add guests</string>
     <string name="apartments_count">апартаментов: %1$d</string>
     <string name="when_settings_next">Далее</string>
     <string name="who_settings_expanded_adults">Взрослые</string>
@@ -42,4 +41,7 @@
     <string name="menu_page_login">Вход</string>
     <string name="apartment_placemark_cost">$%.0f</string>
     <string name="search_destinations">Поиск направлений</string>
+    <string name="search_bar_where_settings_description">Повсюду</string>
+    <string name="search_bar_who_settings_description">Сколько гостей</string>
+    <string name="search_bar_when_settings_description">Неделя в любое время</string>
 </resources>

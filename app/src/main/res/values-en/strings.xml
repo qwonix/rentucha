@@ -11,7 +11,6 @@
     <string name="who_settings_expanded_infants_description">Under 2</string>
     <string name="who_settings_expanded_pets">Pets</string>
     <string name="who_settings_expanded_pets_description">pets_link</string>
-    <string name="search_bar_settings_description">Anywhere · Any week · Add guests</string>
     <string name="apartments_count">apartments: %1$d</string>
     <string name="search_settings_clear"><u>Clear</u></string>
     <string name="search_settings_search">Search</string>
@@ -42,4 +41,7 @@
     <string name="menu_page_login">Log In</string>
     <string name="apartment_placemark_cost">$%.0f</string>
     <string name="search_destinations">Search destinations</string>
+    <string name="search_bar_where_settings_description">Anywhere</string>
+    <string name="search_bar_who_settings_description">Add guests</string>
+    <string name="search_bar_when_settings_description">Any week</string>
 </resources>
