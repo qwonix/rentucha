@@ -26,6 +26,17 @@ class BottomSearchSheetFragment : Fragment(R.layout.fragment_search_bottom_sheet
         binding =
             FragmentSearchBottomSheetBinding.inflate(inflater, container, false)
 
+        binding.apply {
+            viewModel = sharedSearchSettingsViewModel
+            lifecycleOwner = viewLifecycleOwner
+        }
+
+        sharedSearchSettingsViewModel.apartments.observeForever {
+            sharedSearchSettingsViewModel.apartmentsCount.postValue(
+                it.size
+            )
+        }
+
         return binding.root
     }
 

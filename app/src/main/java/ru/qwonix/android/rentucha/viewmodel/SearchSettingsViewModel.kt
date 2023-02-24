@@ -25,9 +25,10 @@ class SearchSettingsViewModel : ViewModel() {
     private val _petsCount = MutableLiveData<Int>(0)
     val petsCount: LiveData<Int> = _petsCount
 
+    val apartmentsCount = MutableLiveData<Int>(0)
+
     private val _apartments = MutableLiveData<List<Apartment>>(emptyList())
     val apartments: LiveData<List<Apartment>> = _apartments
-    val apartmentsCount: LiveData<Int> = MutableLiveData<Int>(_apartments.value?.size ?: 0)
 
     fun requestApartments() {
         RetrofitService.retrofitService.findAll()
