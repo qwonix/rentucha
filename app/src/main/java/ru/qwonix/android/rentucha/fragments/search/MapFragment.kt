@@ -23,7 +23,7 @@ import ru.qwonix.android.rentucha.entity.Apartment
 
 class MapFragment : Fragment(R.layout.fragment_map) {
 
-    private var placemarkTapListeners: MutableList<MapObjectTapListener> = ArrayList()
+    private var placemarkTapListeners = ArrayList<MapObjectTapListener>()
     private lateinit var binding: FragmentMapBinding
     private val sharedSearchSettingsViewModel: SearchSettingsViewModel by activityViewModels()
 
@@ -49,10 +49,7 @@ class MapFragment : Fragment(R.layout.fragment_map) {
             view.rootView.findViewById<BottomNavigationView>(R.id.bottom_navigation_view_main)
         val bottomSheetBehavior = BottomSheetBehavior.from(binding.containerBottomSheetMain)
 
-//        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED;
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-//        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN;
-//        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED;
 
         bottomSheetBehavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
@@ -75,31 +72,24 @@ class MapFragment : Fragment(R.layout.fragment_map) {
             }
         })
 
-        val searchBarCardView = binding.searchBar
-        searchBarCardView.setOnClickListener {
+        // FIXME: with BottomSheetBehavior.STATE_COLLAPSED goes under the interface
+        binding.searchBar.setOnClickListener {
             findNavController().navigate(R.id.action_mapFragment_to_searchSettingsFragment)
             bottomNavigationView.animate()
                 .yBy(bottomNavigationView.height.toFloat())
                 .setDuration(300).start()
         }
 
-        // Перемещение камеры в центр Санкт-Петербурга.
+        // Moving the camera to the center of St. Petersburg.
         binding.mapviewMain.map.move(
             CameraPosition(
                 Point(59.945933, 30.320045), 14.0f, 0.0f, 0.0f
             )
         )
 
-        for (apartment in sharedSearchSettingsViewModel.apartments.value!!) {
-            addApartmentToMap(apartment)
-        }
+        sharedSearchSettingsViewModel.apartments.observeForever { addApartmentsToMap(it) }
 
-        parentFragmentManager.commit {
-            replace(
-                R.id.popup_map_fragment_container,
-                PopupMapApartment(sharedSearchSettingsViewModel.apartments.value!![1])
-            )
-        }
+        sharedSearchSettingsViewModel.requestApartments()
     }
 
     private fun addApartmentsToMap(apartments: List<Apartment>) {
@@ -113,12 +103,6 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         placemarkMapApartmentBinding.apartment = apartment
         placemarkMapApartmentBinding.executePendingBindings()
 
-
-        val placemark = binding.mapviewMain.map.mapObjects.addPlacemark(
-            Point(apartment.latitude, apartment.longitude),
-            ViewProvider(placemarkMapApartmentBinding.root)
-        )
-
         val placemarkTapListener = MapObjectTapListener { _, _ ->
             parentFragmentManager.commit {
                 replace(
@@ -129,13 +113,15 @@ class MapFragment : Fragment(R.layout.fragment_map) {
             false
         }
 
-        placemark.apply {
+        binding.mapviewMain.map.mapObjects.addPlacemark(
+            Point(apartment.latitude, apartment.longitude),
+            ViewProvider(placemarkMapApartmentBinding.root)
+        ).apply {
             userData = apartment
             addTapListener(placemarkTapListener)
         }
-        placemark.addTapListener(placemarkTapListener)
-        placemarkTapListeners.add(placemarkTapListener)
 
+        placemarkTapListeners.add(placemarkTapListener)
     }
 
     override fun onStop() {

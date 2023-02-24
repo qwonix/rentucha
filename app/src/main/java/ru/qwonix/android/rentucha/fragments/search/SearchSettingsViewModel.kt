@@ -25,61 +25,40 @@ class SearchSettingsViewModel : ViewModel() {
     private val _petsCount = MutableLiveData<Int>(0)
     val petsCount: LiveData<Int> = _petsCount
 
-    private val _apartments = MutableLiveData<List<Apartment>>(
-        listOf<Apartment>(
-            Apartment(
-                "Россия",
-                "Санкт-Петербург",
-                4234.21,
-                "https://i.imgur.com/8cUWZ9j.jpeg",
-                4,
-                59.857229, 30.317933
-            ), Apartment(
-                "Россия",
-                "Санкт-Петербург",
-                2342.54,
-                "https://i.imgur.com/udaZzAd.jpeg",
-                5,
-                59.873549, 30.307972
-            )
-        )
-    )
+    private val _apartments = MutableLiveData<List<Apartment>>(emptyList())
     val apartments: LiveData<List<Apartment>> = _apartments
     val apartmentsCount: LiveData<Int> = MutableLiveData<Int>(_apartments.value?.size ?: 0)
 
     fun requestApartments() {
-        val call: Call<MutableList<Apartment>> = RetrofitService.retrofitService.findAll()
-        call.enqueue(object : Callback<MutableList<Apartment>?> {
-            override fun onResponse(
-                call: Call<MutableList<Apartment>?>,
-                response: Response<MutableList<Apartment>?>
-            ) {
-                response.body()?.forEach { println(it) }
-                _apartments.postValue(response.body())
-            }
+        RetrofitService.retrofitService.findAll()
+            .enqueue(object : Callback<MutableList<Apartment>?> {
+                override fun onResponse(
+                    call: Call<MutableList<Apartment>?>,
+                    response: Response<MutableList<Apartment>?>
+                ) {
+                    _apartments.postValue(response.body())
+                }
 
-            override fun onFailure(call: Call<MutableList<Apartment>?>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-        })
+                override fun onFailure(call: Call<MutableList<Apartment>?>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+            })
     }
 
     fun requestApartmentsByName(name: String) {
-        val call: Call<MutableList<Apartment>> = RetrofitService.retrofitService.findAllByName(name)
-        call.enqueue(object : Callback<MutableList<Apartment>?> {
-            override fun onResponse(
-                call: Call<MutableList<Apartment>?>,
-                response: Response<MutableList<Apartment>?>
-            ) {
-                println("requestApartmentsByName")
-                response.body()?.forEach { println(it) }
-                _apartments.postValue(response.body())
-            }
+        RetrofitService.retrofitService.findAllByName(name)
+            .enqueue(object : Callback<MutableList<Apartment>?> {
+                override fun onResponse(
+                    call: Call<MutableList<Apartment>?>,
+                    response: Response<MutableList<Apartment>?>
+                ) {
+                    _apartments.postValue(response.body())
+                }
 
-            override fun onFailure(call: Call<MutableList<Apartment>?>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-        })
+                override fun onFailure(call: Call<MutableList<Apartment>?>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+            })
     }
 
 
