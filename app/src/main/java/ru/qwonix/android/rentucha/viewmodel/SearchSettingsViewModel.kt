@@ -101,19 +101,23 @@ class SearchSettingsViewModel : ViewModel() {
     }
 
     fun removeAdult() {
-        _adultsCount.postValue(_adultsCount.value?.dec() ?: 0)
+        if (_adultsCount.value != 0)
+            _adultsCount.postValue(_adultsCount.value?.dec() ?: 0)
     }
 
     fun removeChild() {
-        _childrenCount.postValue(_childrenCount.value?.dec() ?: 0)
+        if (_childrenCount.value != 0)
+            _childrenCount.postValue(_childrenCount.value?.dec() ?: 0)
     }
 
     fun removeInfant() {
-        _infantsCount.postValue(_infantsCount.value?.dec() ?: 0)
+        if (_infantsCount.value != 0)
+            _infantsCount.postValue(_infantsCount.value?.dec() ?: 0)
     }
 
     fun removePet() {
-        _petsCount.postValue(_petsCount.value?.dec() ?: 0)
+        if (_petsCount.value != 0)
+            _petsCount.postValue(_petsCount.value?.dec() ?: 0)
     }
 
     fun clearSettings() {
