@@ -12,7 +12,11 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/file</item>
+        <item name="android:windowSplashScreenBackground">#FFFFFF</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">#FFFFFF</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/rentucha</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/rentucha</item>
+
     </style>
 
     <style name="MaterialCardView.Cleared.TopRoundedCorners30" parent="">

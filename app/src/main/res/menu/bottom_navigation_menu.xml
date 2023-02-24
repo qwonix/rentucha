@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/tripsFragment"
-        android:icon="@drawable/file"
+        android:icon="@drawable/rentucha"
         android:title="@string/menu_page_trips" />
     <item
         android:id="@+id/inboxFragment"
