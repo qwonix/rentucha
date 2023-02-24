@@ -34,7 +34,7 @@
     <string name="apart_search_item_available_dates">Jan 14–19</string>
     <string name="apart_search_item_price_per_night"><b>$%.0f</b> night</string>
     <string name="apart_search_item_location">%1$s, %2$s</string>
-    <string name="apart_search_item_date">Add 3 weeks ago</string>
+    <string name="apart_search_item_date">Added %1$s weeks ago</string>
     <string name="menu_page_search">Search</string>
     <string name="menu_page_wishlist">Wishlist</string>
     <string name="menu_page_trips">Trips</string>

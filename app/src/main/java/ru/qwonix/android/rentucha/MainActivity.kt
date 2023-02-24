@@ -15,11 +15,10 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container_main) as NavHostFragment
-        val navController = navHostFragment.navController
-        val bottomNavigationView =
-            findViewById<BottomNavigationView>(R.id.bottom_navigation_view_main)
 
-        bottomNavigationView.setupWithNavController(navController)
+        findViewById<BottomNavigationView>(R.id.bottom_navigation_view_main).setupWithNavController(
+            navHostFragment.navController
+        )
 
         MapKitFactory.setApiKey(BuildConfig.YANDEX_MAPKIT_KEY)
         MapKitFactory.initialize(this)

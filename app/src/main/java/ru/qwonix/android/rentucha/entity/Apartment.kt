@@ -1,5 +1,8 @@
 package ru.qwonix.android.rentucha.entity
 
+import java.time.LocalDateTime
+import java.time.temporal.ChronoUnit
+
 
 data class Apartment(
 //    var id: Long,
@@ -13,7 +16,15 @@ data class Apartment(
     var latitude: Double,
     var longitude: Double,
 
-//    var creationTimestamp: LocalDateTime,
+    var creationTimestamp: LocalDateTime
+
 //    var images: List<String>,
 
-)
+) {
+    fun getAddedWeeksAgo(): Long {
+        return ChronoUnit.WEEKS.between(
+            creationTimestamp,
+            LocalDateTime.now()
+        )
+    }
+}
