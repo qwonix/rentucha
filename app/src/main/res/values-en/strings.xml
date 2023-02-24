@@ -22,7 +22,7 @@
     <string name="where_settings">Where</string>
     <string name="where_settings_expanded">Where?</string>
     <string name="where_settings_default">I\'am flexible</string>
-    <string name="where_settings_search_destinations">Search</string>
+    <string name="where_settings_search_destinations">@string/search_destinations</string>
     <string name="who_settings">Who</string>
     <string name="who_settings_default">Add guests</string>
     <string name="who_settings_expanded">Who?</string>

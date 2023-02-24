@@ -10,7 +10,7 @@
     <string name="where_settings">Куда</string>
     <string name="where_settings_expanded">Куда?</string>
     <string name="where_settings_default">Гибкий поиск</string>
-    <string name="where_settings_search_destinations">Умный поиск</string>
+    <string name="where_settings_search_destinations">@string/search_destinations</string>
     <string name="who_settings">Кто</string>
     <string name="who_settings_default">Добавить гостей</string>
     <string name="who_settings_expanded">Кто?</string>
