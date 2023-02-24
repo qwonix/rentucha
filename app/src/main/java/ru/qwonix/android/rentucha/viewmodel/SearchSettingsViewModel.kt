@@ -41,7 +41,7 @@ class SearchSettingsViewModel : ViewModel() {
                 }
 
                 override fun onFailure(call: Call<MutableList<Apartment>?>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    // TODO("Not yet implemented")
                 }
             })
     }
@@ -57,7 +57,7 @@ class SearchSettingsViewModel : ViewModel() {
                 }
 
                 override fun onFailure(call: Call<MutableList<Apartment>?>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    // TODO("Not yet implemented")
                 }
             })
     }
