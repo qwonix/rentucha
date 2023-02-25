@@ -10,7 +10,7 @@
     </parent>
     <groupId>ru.qwonix.rentucha</groupId>
     <artifactId>rentucha-api</artifactId>
-    <version>0.0.2</version>
+    <version>1.0.0</version>
     <name>rentucha-api</name>
     <description>api for rentucha app</description>
     <properties>

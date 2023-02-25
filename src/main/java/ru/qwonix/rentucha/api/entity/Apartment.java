@@ -5,7 +5,6 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Data
@@ -38,21 +37,8 @@ public class Apartment {
     @Column(nullable = false)
     private Double longitude;
 
-    @OneToMany
-    @JoinTable(
-            name = "apartment_image",
-            joinColumns = {@JoinColumn(name = "apartment_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "image_id", referencedColumnName = "id", unique = true)}
-    )
-    private List<Image> images;
-
-    @ManyToMany
-    @JoinTable(
-            name = "apartment_amenity",
-            joinColumns = {@JoinColumn(name = "apartment_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "amenity_id", referencedColumnName = "id")}
-    )
-    private List<Amenity> amenities;
+    @Column
+    private String mainImageUrl;
 
     @CreationTimestamp
     @Column(updatable = false)

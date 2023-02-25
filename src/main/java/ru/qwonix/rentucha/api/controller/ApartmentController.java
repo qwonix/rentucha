@@ -1,9 +1,13 @@
 package ru.qwonix.rentucha.api.controller;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import ru.qwonix.rentucha.api.entity.Apartment;
 import ru.qwonix.rentucha.api.repository.ApartmentRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -16,26 +20,18 @@ public class ApartmentController {
 
 
     @GetMapping("/apartments")
-    List<Apartment> all() {
+    List<Apartment> getAllApartments() {
         return repository.findAll();
     }
 
-    @PostMapping("/apartments")
-    Apartment newEmployee(@RequestBody Apartment apartment) {
-        return repository.save(apartment);
+    @GetMapping(value = "/apartments", params = "query")
+    List<Apartment> getApartmentsByQuery(@RequestParam(name = "query", required = false) String query) {
+        return new ArrayList<>(repository.findAllByCityNameContainsIgnoreCase(query));
     }
-
 
     @GetMapping("/apartments/{id}")
-    Apartment one(@PathVariable Long id) {
-
+    Apartment getApartmentById(@PathVariable Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Could not find apartment " + id));
-    }
-
-
-    @DeleteMapping("/apartments/{id}")
-    void deleteEmployee(@PathVariable Long id) {
-        repository.deleteById(id);
     }
 }
