@@ -10,7 +10,11 @@ apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 android {
     namespace 'ru.qwonix.android.rentucha'
     compileSdk 33
-
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
     defaultConfig {
         applicationId "ru.qwonix.android.rentucha"
         minSdk 31
