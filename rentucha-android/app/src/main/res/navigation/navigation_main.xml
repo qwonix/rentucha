@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mapFragment">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="ru.qwonix.android.rentucha.fragments.search.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map">
+        <action
+            android:id="@+id/action_mapFragment_to_searchSettingsFragment"
+            app:destination="@id/searchSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wishlistFragment"
+        android:name="ru.qwonix.android.rentucha.fragments.WishlistFragment"
+        android:label="fragment_wishlists"
+        tools:layout="@layout/fragment_wishlists" />
+    <fragment
+        android:id="@+id/tripsFragment"
+        android:name="ru.qwonix.android.rentucha.fragments.TripsFragment"
+        android:label="fragment_trips"
+        tools:layout="@layout/fragment_trips" />
+    <fragment
+        android:id="@+id/inboxFragment"
+        android:name="ru.qwonix.android.rentucha.fragments.InboxFragment"
+        android:label="fragment_inbox"
+        tools:layout="@layout/fragment_inbox" />
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="ru.qwonix.android.rentucha.fragments.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" />
+    <fragment
+        android:id="@+id/searchSettingsFragment"
+        android:name="ru.qwonix.android.rentucha.fragments.search.settings.SearchSettingsFragment"
+        android:label="fragment_search_settings"
+        tools:layout="@layout/fragment_search_settings">
+        <action
+            android:id="@+id/action_searchSettingsFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+</navigation>

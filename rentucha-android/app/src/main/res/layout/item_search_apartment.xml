@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="apartment"
+            type="ru.qwonix.android.rentucha.entity.Apartment" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/MaterialCardView.Cleared"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".fragments.search.ItemSearchApartment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/MaterialCardView.Cleared"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:scaleType="centerCrop"
+                    android:background="@color/white"
+                    tools:background="@drawable/ic_launcher_background"
+                    app:imageUrl="@{apartment.mainImageUrl}" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_baseline_favorite_border_24" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/apart_search_item_location(apartment.countryName, apartment.cityName)}"
+                    android:textColor="@color/gray_900"
+                    tools:text="@string/apart_search_item_location" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@{@string/apart_search_item_date(apartment.addedWeeksAgo)}"
+                    tools:text="@string/apart_search_item_date"
+                    android:textColor="@color/gray_700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/apart_search_item_available_dates"
+                    android:textColor="@color/gray_700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@{@string/apart_search_item_price_per_night(apartment.pricePerNight)}"
+                    android:textColor="@color/gray_900"
+                    tools:text="@string/apart_search_item_price_per_night" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_bar_where_to">Куда?</string>
+    <string name="search_settings_clear"><u>Очистить</u></string>
+    <string name="search_settings_search">Искать</string>
+    <string name="when_settings">Когда</string>
+    <string name="when_settings_expanded">Когда?</string>
+    <string name="when_settings_default">Неделя</string>
+    <string name="when_settings_skip">Пропустить</string>
+    <string name="where_settings">Куда</string>
+    <string name="where_settings_expanded">Куда?</string>
+    <string name="where_settings_default">Гибкий поиск</string>
+    <string name="where_settings_search_destinations">@string/search_destinations</string>
+    <string name="who_settings">Кто</string>
+    <string name="who_settings_default">Добавить гостей</string>
+    <string name="who_settings_expanded">Кто?</string>
+    <string name="apartments_count">апартаментов: %1$d</string>
+    <string name="when_settings_next">Далее</string>
+    <string name="who_settings_expanded_adults">Взрослые</string>
+    <string name="who_settings_expanded_adults_description">Старше 12 лет</string>
+    <string name="who_settings_expanded_adults_count">0</string>
+    <string name="who_settings_expanded_children">Дети</string>
+    <string name="who_settings_expanded_children_description">От 2-х до 12 лет</string>
+    <string name="who_settings_expanded_children_count">0</string>
+    <string name="who_settings_expanded_infants">Младенцы</string>
+    <string name="who_settings_expanded_infants_description">До 2-х лет</string>
+    <string name="who_settings_expanded_infants_count">0</string>
+    <string name="who_settings_expanded_pets">Животные</string>
+    <string name="who_settings_expanded_pets_description">ссылка</string>
+    <string name="who_settings_expanded_pets_count">0</string>
+    <string name="apart_search_item_date">Добавлено %1$s недели назад</string>
+    <string name="apart_search_item_location">%1$s, %2$s</string>
+    <string name="apart_search_item_available_dates">Январь 14–19</string>
+    <string name="apart_search_item_price_per_night"><b>$%.0f</b> ночь</string>
+    <string name="search_settings_stays">Места</string>
+    <string name="who_settings_description">%1$s гостей</string>
+    <string name="menu_page_search">Поиск</string>
+    <string name="menu_page_wishlist">Вишлисты</string>
+    <string name="menu_page_trips">Поездки</string>
+    <string name="menu_page_indox">Входящие</string>
+    <string name="menu_page_login">Вход</string>
+    <string name="apartment_placemark_cost">$%.0f</string>
+    <string name="search_destinations">Поиск направлений</string>
+    <string name="search_bar_where_settings_description">Повсюду</string>
+    <string name="search_bar_who_settings_description">Сколько гостей</string>
+    <string name="search_bar_when_settings_description">Неделя в любое время</string>
+</resources>

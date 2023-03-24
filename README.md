@@ -1,4 +1,4 @@
-# Rentucha Android App
+# Rentucha Android App + Spring Boot REST API
 
 Мобильное приложение Rentucha позволяет изучить предложения рынка о посуточной аренде жилья. Все
 апартаменты отображаются на карте, что добавляет наглядности и удобства для пользователя
@@ -8,8 +8,9 @@
 ## Содержание
 
 - [Технологии](#технологии)
-- [Быстрый запуск](#быстрый-запуск)
-- [Зачем вы разработали этот проект?](#зачем-вы-разработали-этот-проект?)
+- [Загрузка приложеия](#загрузка-приложеия)
+- [REST API](#REST-API)
+- [Зачем вы разработали этот проект?](#Зачем-вы-разработали-этот-проект)
 - [TODO](#todo)
 - [Источники](#источники)
 - [Использование](#использование)
@@ -20,10 +21,33 @@
 * [Retrofit](https://square.github.io/retrofit/)
 * [Picasso](https://square.github.io/picasso/)
 * [Material Design](https://m2.material.io/develop/android)
+* [Spring Boot](https://spring.io/)
+* [Lombok](https://projectlombok.org/)
+* [H2 Database](https://www.h2database.com/)
 
-### Быстрый запуск
+## Загрузка приложеия
 
-Последнюю версию можно скачать на [странице релизов](https://github.com/qwonix/rentucha/releases).
+Последнюю версию приложения можно скачать на [странице релизов](https://github.com/qwonix/rentucha/releases).
+
+### Загрузка исходников сервера
+
+```shell
+git clone https://github.com/qwonix/rentucha-api.git
+cd rentucha-api
+```
+
+### Запуск сервера
+
+```shell
+mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=8085
+```
+
+# REST API
+
+Простейший REST API, предоставляющий доступ к базе данных,
+хранящей объекты Apartment.
+
+Список запросов и подробное описание в [Rentucha REST API](rentucha-api/README.md)
 
 ### Зачем вы разработали этот проект?
 

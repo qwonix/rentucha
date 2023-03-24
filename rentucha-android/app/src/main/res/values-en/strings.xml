@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_bar_where_to">Where to?</string>
+    <string name="search_settings_stays">Stays</string>
+    <string name="when_settings_next">Next</string>
+    <string name="who_settings_expanded_adults">Adults</string>
+    <string name="who_settings_expanded_adults_description">Ages 13 or above</string>
+    <string name="who_settings_expanded_children">Children</string>
+    <string name="who_settings_expanded_children_description">Ages 2–12</string>
+    <string name="who_settings_expanded_infants">Infants</string>
+    <string name="who_settings_expanded_infants_description">Under 2</string>
+    <string name="who_settings_expanded_pets">Pets</string>
+    <string name="who_settings_expanded_pets_description">pets_link</string>
+    <string name="apartments_count">apartments: %1$d</string>
+    <string name="search_settings_clear"><u>Clear</u></string>
+    <string name="search_settings_search">Search</string>
+    <string name="when_settings">When</string>
+    <string name="when_settings_expanded">When?</string>
+    <string name="when_settings_default">Any week</string>
+    <string name="when_settings_skip">Skip</string>
+    <string name="where_settings">Where</string>
+    <string name="where_settings_expanded">Where?</string>
+    <string name="where_settings_default">I\'am flexible</string>
+    <string name="where_settings_search_destinations">@string/search_destinations</string>
+    <string name="who_settings">Who</string>
+    <string name="who_settings_default">Add guests</string>
+    <string name="who_settings_expanded">Who?</string>
+    <string name="who_settings_description">%1$s guests</string>
+    <string name="who_settings_expanded_adults_count">0</string>
+    <string name="who_settings_expanded_children_count">0</string>
+    <string name="who_settings_expanded_infants_count">0</string>
+    <string name="who_settings_expanded_pets_count">0</string>
+    <string name="apart_search_item_available_dates">Jan 14–19</string>
+    <string name="apart_search_item_price_per_night"><b>$%.0f</b> night</string>
+    <string name="apart_search_item_location">%1$s, %2$s</string>
+    <string name="apart_search_item_date">Added %1$s weeks ago</string>
+    <string name="menu_page_search">Search</string>
+    <string name="menu_page_wishlist">Wishlist</string>
+    <string name="menu_page_trips">Trips</string>
+    <string name="menu_page_indox">Indox</string>
+    <string name="menu_page_login">Log In</string>
+    <string name="apartment_placemark_cost">$%.0f</string>
+    <string name="search_destinations">Search destinations</string>
+    <string name="search_bar_where_settings_description">Anywhere</string>
+    <string name="search_bar_who_settings_description">Add guests</string>
+    <string name="search_bar_when_settings_description">Any week</string>
+</resources>
