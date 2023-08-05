@@ -1,14 +1,14 @@
 # Rentucha REST API
 
 Простейший REST API, предоставляющий доступ к базе данных,
-хранящей объекты Apartment.
+хранящей данные о апартаментах.
 
 Разработан в дополнение к [Rentucha Android App](https://github.com/qwonix/rentucha)
 
 ## Технологии
 
 * [Spring Boot](https://spring.io/)
-* [Lombok](https://projectlombok.org/)
+* [Hibernate](https://hibernate.org/)
 * [H2 Database](https://www.h2database.com/)
 
 ## Установка
